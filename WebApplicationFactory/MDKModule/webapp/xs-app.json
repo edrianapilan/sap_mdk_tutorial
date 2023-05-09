@@ -7,13 +7,6 @@
 	},
 	"routes": [
 		{
-			"csrfProtection": false,
-			"source": "^/SampleServiceV2/(.*)$",
-			"target": "$1",
-			"destination": "SampleServiceV2",
-			"authenticationType": "xsuaa"
-		},
-		{
 			"source": "^/index.html$",
 			"target": "/index.html",
 			"service": "html5-apps-repo-rt",

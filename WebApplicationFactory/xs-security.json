@@ -1,5 +1,5 @@
 {
-	"xsappname": "nsDemoSampleApp",
+	"xsappname": "nsMDKDeepLink",
 	"tenant-mode": "dedicated",
 	"description": "Security profile of called application",
 	"scopes": [
@@ -19,7 +19,7 @@
 	],
 	"oauth2-configuration": {
 		"redirect-uris": [
-			"https://806b43e2trial-dev-nsdemosampleapp-approuter.cfapps.us10-001.hana.ondemand.com/**"
+			"https://806b43e2trial-dev-nsmdkdeeplink-approuter.cfapps.us10-001.hana.ondemand.com/**"
 		]
 	}
 }

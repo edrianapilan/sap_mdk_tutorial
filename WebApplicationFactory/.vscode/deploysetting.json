@@ -1,5 +1,5 @@
 {
 	"local": false,
 	"centralRouter": false,
-	"startUrl": "https://806b43e2trial-dev-nsdemosampleapp-approuter.cfapps.us10-001.hana.ondemand.com/nsDemoSampleApp"
+	"startUrl": "https://806b43e2trial-dev-nsmdkdeeplink-approuter.cfapps.us10-001.hana.ondemand.com/nsMDKDeepLink"
 }
