@@ -1,0 +1,25 @@
+{
+	"xsappname": "nsDemoSampleApp",
+	"tenant-mode": "dedicated",
+	"description": "Security profile of called application",
+	"scopes": [
+		{
+			"name": "uaa.user",
+			"description": "UAA"
+		}
+	],
+	"role-templates": [
+		{
+			"name": "Token_Exchange",
+			"description": "UAA",
+			"scope-references": [
+				"uaa.user"
+			]
+		}
+	],
+	"oauth2-configuration": {
+		"redirect-uris": [
+			"https://806b43e2trial-dev-nsdemosampleapp-approuter.cfapps.us10-001.hana.ondemand.com/**"
+		]
+	}
+}

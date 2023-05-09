@@ -1,0 +1,18 @@
+{"folders":[
+        {
+            "path": "DemoSampleApp"
+        },
+        {
+            "name": "WebApplicationFactory",
+            "path": "WebApplicationFactory"
+        }
+    ],
+    "settings": {
+        "mdk.uieditor": {
+            "device": "tablet"
+        },
+        "mdk.i18n": {
+            "displayLanguages": "i18n"
+        }
+    }
+}

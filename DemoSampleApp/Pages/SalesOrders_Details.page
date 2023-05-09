@@ -1,0 +1,74 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "{SalesOrderId}",
+							"_Name": "KeyValue0",
+							"KeyName": "Order Number",
+							"Visible": true
+						},
+						{
+							"Value": "{LifeCycleStatusName}",
+							"_Name": "KeyValue1",
+							"KeyName": "Status",
+							"Visible": true
+						},
+						{
+							"Value": "$(D,{CreatedAt},'','',{format:'medium'})",
+							"_Name": "KeyValue2",
+							"KeyName": "Created At",
+							"Visible": true
+						},
+						{
+							"Value": "$(C,{NetAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+							"_Name": "KeyValue3",
+							"KeyName": "Net Amount",
+							"Visible": true
+						},
+						{
+							"Value": "$(C,{TaxAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+							"_Name": "KeyValue4",
+							"KeyName": "Tax Amount",
+							"Visible": true
+						},
+						{
+							"Value": "$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})",
+							"_Name": "KeyValue5",
+							"KeyName": "Total Amount",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SalesOrders_Details",
+	"Caption": "Order Details",
+	"PrefersLargeCaption": true,
+	"DesignTimeTarget": {
+		"Service": "/DemoSampleApp/Services/SampleServiceV2.service",
+		"EntitySet": "SalesOrderHeaders"
+	}
+}

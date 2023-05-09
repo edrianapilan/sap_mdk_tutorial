@@ -1,0 +1,75 @@
+_schema-version: "3.2"
+ID: nsMDK_Styling
+version: 0.0.1
+modules:
+- name: nsMDK_Styling-approuter
+  type: approuter.nodejs
+  path: nsMDK_Styling-approuter
+  requires:
+  - name: nsMDK_Styling_html_repo_runtime
+  - name: dest_nsMDK_Styling
+  - name: conn_nsMDK_Styling
+  - name: uaa_nsMDK_Styling
+  parameters:
+    disk-quota: 256M
+    memory: 256M
+  properties:
+    SEND_XFRAMEOPTIONS: false
+    SAP_ROUTER_VERSION: 10
+    destinations: '[]'
+- name: nsMDK_Styling_ui_deployer
+  type: com.sap.application.content
+  path: .
+  requires:
+  - name: nsMDK_Styling_html_repo_host
+    parameters:
+      content-target: true
+  build-parameters:
+    build-result: resources
+    requires:
+    - artifacts:
+      - MDKModule-content.zip
+      name: MDKModule
+      target-path: resources/
+- name: MDKModule
+  type: html5
+  path: MDKModule
+  build-parameters:
+    builder: custom
+    commands:
+    - npm run build
+    supported-platforms: []
+resources:
+- name: nsMDK_Styling_html_repo_runtime
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-runtime
+- name: nsMDK_Styling_html_repo_host
+  type: org.cloudfoundry.managed-service
+  parameters:
+    service: html5-apps-repo
+    service-plan: app-host
+- name: dest_nsMDK_Styling
+  type: org.cloudfoundry.managed-service
+  parameters:    
+    service: destination
+    service-plan: lite
+- name: conn_nsMDK_Styling
+  type: org.cloudfoundry.managed-service
+  parameters:    
+    service: connectivity
+    service-plan: lite
+- name: uaa_nsMDK_Styling
+  type: org.cloudfoundry.managed-service
+  parameters:
+    path: ./xs-security.json
+    service: xsuaa
+    service-name: nsMDK_Styling-xsuaa-service
+    service-plan: application
+
+build-parameters:
+  before-all:
+  - builder: custom
+    commands:
+    - npm install

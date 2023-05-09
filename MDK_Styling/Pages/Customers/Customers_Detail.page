@@ -1,0 +1,225 @@
+{
+	"DesignTimeTarget": {
+		"Service": "/MDK_Styling/Services/SampleServiceV2.service",
+		"EntitySet": "Customers",
+		"QueryOptions": ""
+	},
+	"Controls": [
+		{
+			"DataSubscriptions": [
+				"SalesOrderHeaders"
+			],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "{City}",
+						"Footnote": "{CustomerId}",
+						"Description": "{Country}",
+						"StatusText": "{DateOfBirth}",
+						"SubstatusText": "{EmailAddress}",
+						"Tags": [],
+						"HeadlineText": "{FirstName}",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading",
+						"Styles": {
+							"ObjectHeader": "objectHeaderBackground",
+							"BodyText": "objectHeaderBodyText",
+							"Description": "objectHeaderDescription",
+							"Footnote": "objectHeaderFootNote",
+							"HeadlineText": "objectHeaderHeadline",
+							"StatusText": "objectHeaderStatus",
+							"Subhead": "objectHeaderSubhead",
+							"SubstatusText": "objectHeaderSubStatus"
+						}
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"Value": "{City}",
+							"_Name": "KeyValue0",
+							"KeyName": "City"
+						},
+						{
+							"Value": "{Country}",
+							"_Name": "KeyValue1",
+							"KeyName": "Country"
+						},
+						{
+							"Value": "{CustomerId}",
+							"_Name": "KeyValue2",
+							"KeyName": "CustomerId"
+						},
+						{
+							"Value": "{DateOfBirth}",
+							"_Name": "KeyValue3",
+							"KeyName": "DateOfBirth"
+						},
+						{
+							"Value": "{EmailAddress}",
+							"_Name": "KeyValue4",
+							"KeyName": "EmailAddress"
+						},
+						{
+							"Value": "{FirstName}",
+							"_Name": "KeyValue5",
+							"KeyName": "FirstName"
+						},
+						{
+							"Value": "{HouseNumber}",
+							"_Name": "KeyValue6",
+							"KeyName": "HouseNumber"
+						},
+						{
+							"Value": "{LastName}",
+							"_Name": "KeyValue7",
+							"KeyName": "LastName"
+						},
+						{
+							"Value": "{PhoneNumber}",
+							"_Name": "KeyValue8",
+							"KeyName": "PhoneNumber"
+						},
+						{
+							"Value": "{PostalCode}",
+							"_Name": "KeyValue9",
+							"KeyName": "PostalCode"
+						},
+						{
+							"Value": "{Street}",
+							"_Name": "KeyValue10",
+							"KeyName": "Street"
+						},
+						{
+							"Value": "{UpdatedTimestamp}",
+							"_Name": "KeyValue11",
+							"KeyName": "UpdatedTimestamp"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"KeyAndValues": [
+						{
+							"Value": "{Address/HouseNumber}",
+							"_Name": "KeyValue12",
+							"KeyName": "HouseNumber"
+						},
+						{
+							"Value": "{Address/Street}",
+							"_Name": "KeyValue13",
+							"KeyName": "Street"
+						},
+						{
+							"Value": "{Address/City}",
+							"_Name": "KeyValue14",
+							"KeyName": "City"
+						},
+						{
+							"Value": "{Address/Country}",
+							"_Name": "KeyValue15",
+							"KeyName": "Country"
+						},
+						{
+							"Value": "{Address/PostalCode}",
+							"_Name": "KeyValue16",
+							"KeyName": "PostalCode"
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValueAddress",
+					"Header": {
+						"_Name": "SectionHeader0",
+						"UseTopPadding": true,
+						"Caption": "Address"
+					},
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"Header": {
+						"_Name": "SectionHeader1",
+						"UseTopPadding": true,
+						"Caption": "SalesOrders"
+					},
+					"_Type": "Section.Type.ObjectTable",
+					"Target": {
+						"EntitySet": "{@odata.readLink}/SalesOrders",
+						"Service": "/MDK_Styling/Services/SampleServiceV2.service"
+					},
+					"_Name": "SectionObjectTable0",
+					"EmptySection": {
+						"Caption": "No record found!",
+						"FooterVisible": false
+					},
+					"ObjectCell": {
+						"Title": "{LifeCycleStatusName}",
+						"Subhead": "{CreatedAt}",
+						"Footnote": "{CustomerId}",
+						"Description": "{CurrencyCode}",
+						"StatusText": "{GrossAmount}",
+						"SubstatusText": "{LifeCycleStatus}",
+						"PreserveIconStackSpacing": false,
+						"AccessoryType": "disclosureIndicator",
+						"Tags": [],
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"OnPress": "/MDK_Styling/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action",
+						"ContextMenu": {
+							"Items": [],
+							"PerformFirstActionWithFullSwipe": true
+						}
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Customers_Detail",
+	"Caption": "Customer Detail",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Edit",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/MDK_Styling/Actions/Customers/NavToCustomers_Edit.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "More",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/MDK_Styling/Actions/Customers/Customers_DetailPopover.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

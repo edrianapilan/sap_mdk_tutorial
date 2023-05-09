@@ -1,0 +1,12 @@
+{
+	"authenticationMethod": "route",
+	"routes": [
+		{
+			"csrfProtection": false,
+			"source": "^/SampleServiceV2/(.*)$",
+			"target": "$1",
+			"destination": "SampleServiceV2",
+			"authenticationType": "xsuaa"
+		}
+	]
+}

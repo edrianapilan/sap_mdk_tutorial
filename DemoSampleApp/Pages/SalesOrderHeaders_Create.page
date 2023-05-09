@@ -1,0 +1,117 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer0",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Value": "EUR",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateCurrencyCode",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Currency Code",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "18.010",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateNetAmount",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Net Amount",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "108.010",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateTaxAmount",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Tax Amount",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "126.02",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateGrossAmount",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Gross Amount",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "N",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateLifeCycleStatus",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Lifecycle Status",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "New",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCreateLifeCycleStatusName",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Lifecycle Status Name",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FCCreatedate",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Creation Date",
+							"Mode": "Datetime"
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "SalesOrderHeaders_Create",
+	"Caption": "Create Order",
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/DemoSampleApp/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}
