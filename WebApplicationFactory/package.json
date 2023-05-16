@@ -1,5 +1,5 @@
 {
-  "name": "nsMDKDeepLink",
+  "name": "nsMDK_Annotations",
   "version": "0.0.1",
   "devDependencies": {
     "eslint": "5.16.x",

@@ -1,15 +1,15 @@
 _schema-version: "3.2"
-ID: nsMDKDeepLink
+ID: nsMDK_Annotations
 version: 0.0.1
 modules:
-- name: nsMDKDeepLink-approuter
+- name: nsMDK_Annotations-approuter
   type: approuter.nodejs
-  path: nsMDKDeepLink-approuter
+  path: nsMDK_Annotations-approuter
   requires:
-  - name: nsMDKDeepLink_html_repo_runtime
-  - name: dest_nsMDKDeepLink
-  - name: conn_nsMDKDeepLink
-  - name: uaa_nsMDKDeepLink
+  - name: nsMDK_Annotations_html_repo_runtime
+  - name: dest_nsMDK_Annotations
+  - name: conn_nsMDK_Annotations
+  - name: uaa_nsMDK_Annotations
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -17,11 +17,11 @@ modules:
     SEND_XFRAMEOPTIONS: false
     SAP_ROUTER_VERSION: 10
     destinations: '[]'
-- name: nsMDKDeepLink_ui_deployer
+- name: nsMDK_Annotations_ui_deployer
   type: com.sap.application.content
   path: .
   requires:
-  - name: nsMDKDeepLink_html_repo_host
+  - name: nsMDK_Annotations_html_repo_host
     parameters:
       content-target: true
   build-parameters:
@@ -40,32 +40,32 @@ modules:
     - npm run build
     supported-platforms: []
 resources:
-- name: nsMDKDeepLink_html_repo_runtime
+- name: nsMDK_Annotations_html_repo_runtime
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
     service-plan: app-runtime
-- name: nsMDKDeepLink_html_repo_host
+- name: nsMDK_Annotations_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
     service-plan: app-host
-- name: dest_nsMDKDeepLink
+- name: dest_nsMDK_Annotations
   type: org.cloudfoundry.managed-service
   parameters:    
     service: destination
     service-plan: lite
-- name: conn_nsMDKDeepLink
+- name: conn_nsMDK_Annotations
   type: org.cloudfoundry.managed-service
   parameters:    
     service: connectivity
     service-plan: lite
-- name: uaa_nsMDKDeepLink
+- name: uaa_nsMDK_Annotations
   type: org.cloudfoundry.managed-service
   parameters:
     path: ./xs-security.json
     service: xsuaa
-    service-name: nsMDKDeepLink-xsuaa-service
+    service-name: nsMDK_Annotations-xsuaa-service
     service-plan: application
 
 build-parameters:

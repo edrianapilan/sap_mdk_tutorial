@@ -2,7 +2,7 @@
 	"_version": "1.12.0",
 	"sap.app": {
         
-		"id": "ns.MDKDeepLink",
+		"id": "ns.MDK_Annotations",
 		"type": "application",
 		"applicationVersion": {
 			"version": "1.0.0"
@@ -29,7 +29,7 @@
 		}
 	},
 	"sap.url": {
-		"uri": "/nsMDKDeepLink"
+		"uri": "/nsMDK_Annotations"
 	}
 		
 }
