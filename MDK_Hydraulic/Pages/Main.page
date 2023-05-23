@@ -1,0 +1,93 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable1",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton1",
+							"Title": "Hydraulic Inspection",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Normal",
+							"ImagePosition": "Leading",
+							"FullWidth": true,
+							"Visible": true,
+							"OnPress": "/MDK_Hydraulic/Actions/NavToHydraulic_Inspection.action"
+						}
+					]
+				},
+				{
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0",
+					"Controls": []
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Main",
+	"Caption": "Main",
+	"PrefersLargeCaption": true,
+	"ToolBar": {
+		"Items": [
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "LogoutToolbarItem",
+				"Caption": "Logout",
+				"Enabled": true,
+				"Visible": true,
+				"Clickable": true,
+				"OnPress": "/MDK_Hydraulic/Actions/LogoutMessage.action"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "UploadToolbarItem",
+				"Caption": "Sync",
+				"Enabled": true,
+				"Visible": "$(PLT,true,true,false)",
+				"Clickable": true,
+				"OnPress": "/MDK_Hydraulic/Actions/Service/SyncStartedMessage.action"
+			},
+			{
+				"_Type": "Control.Type.ToolbarItem",
+				"_Name": "UpdateToolbarItem",
+				"Caption": "Update",
+				"Enabled": true,
+				"Visible": "$(PLT,true,true,false)",
+				"Clickable": true,
+				"OnPress": "/MDK_Hydraulic/Actions/AppUpdateProgressBanner.action"
+			}
+		]
+	}
+}

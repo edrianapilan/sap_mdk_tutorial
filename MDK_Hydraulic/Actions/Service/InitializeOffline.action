@@ -1,0 +1,15 @@
+{
+    "Service": "/MDK_Hydraulic/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+        "Name": "Customers",
+        "Query": "Customers"
+    }],
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText": "Downloading...",
+    "ActionResult": {
+        "_Name": "init"
+    },
+    "OnSuccess": "/MDK_Hydraulic/Actions/Service/InitializeOfflineSuccessMessage.action",
+    "OnFailure": "/MDK_Hydraulic/Actions/Service/InitializeOfflineFailureMessage.action"
+}

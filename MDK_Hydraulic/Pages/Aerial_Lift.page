@@ -1,0 +1,344 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.FormCellContainer",
+			"_Name": "FormCellContainer0",
+			"Sections": [
+				{
+					"Controls": [
+						{
+							"Value": "Note: Please enter corresponding status code if not satisfactory.",
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": false
+						},
+						{
+							"Value": "Controls",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle0",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": false
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger control"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "2. Lower control system and tool circuit"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": "Booms",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle1",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": false
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger control"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": "Structural",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle2",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": false
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger control"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": "Other",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle3",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": false
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger control"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "Operator/Inspector Comments",
+							"Enabled": true
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Date Last DI-Electric Test",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Date Fire Extinguisher Test",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Tire Pressure Check"
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Vehicle Number",
+							"Enabled": true
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Office Location",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Work Shift Hours",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"_Type": "Control.Type.FormCell.Button",
+							"_Name": "FormCellButton0",
+							"IsVisible": true,
+							"Separator": true,
+							"Title": "Submit",
+							"Alignment": "Center",
+							"ButtonType": "Primary",
+							"Semantic": "Normal",
+							"ImagePosition": "Leading"
+						}
+					],
+					"Visible": true
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Aerial_Lift",
+	"Caption": "Aerial_Lift"
+}

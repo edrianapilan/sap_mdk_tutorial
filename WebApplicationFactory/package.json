@@ -1,5 +1,5 @@
 {
-  "name": "nsMDK_Annotations",
+  "name": "nsDemoSampleApp",
   "version": "0.0.1",
   "devDependencies": {
     "eslint": "5.16.x",

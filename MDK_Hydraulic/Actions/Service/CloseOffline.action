@@ -1,0 +1,10 @@
+{
+    "_Type": "Action.Type.OfflineOData.Close",
+    "Service": "/MDK_Hydraulic/Services/SampleServiceV2.service",
+    "Force": true,
+    "ActionResult": {
+        "_Name": "close"
+    },
+    "OnSuccess": "/MDK_Hydraulic/Actions/Service/CloseOfflineSuccessMessage.action",
+    "OnFailure": "/MDK_Hydraulic/Actions/Service/CloseOfflineFailureMessage.action"
+}

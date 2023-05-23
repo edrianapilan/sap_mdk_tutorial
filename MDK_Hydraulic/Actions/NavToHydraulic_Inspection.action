@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToHyrdolic_Inspection"
+	},
+	"PageToOpen": "/MDK_Hydraulic/Pages/Hydraulic_Inspection.page"
+}

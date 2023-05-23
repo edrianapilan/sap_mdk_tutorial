@@ -1,0 +1,53 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Subhead": "Date",
+						"Footnote": "Machine ID",
+						"DetailImage": "sap-icon://car-rental",
+						"DetailImageIsCircular": false,
+						"BodyText": "Windows ID",
+						"HeadlineText": "Vehicle Inspection",
+						"StatusPosition": "Stacked",
+						"StatusImagePosition": "Leading",
+						"SubstatusImagePosition": "Leading"
+					},
+					"_Type": "Section.Type.ObjectHeader",
+					"_Name": "SectionObjectHeader0",
+					"Visible": true
+				}
+			]
+		},
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "Tabs0",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "Daily Check Sheet - Aerial Lift",
+					"PageToOpen": "/MDK_Hydraulic/Pages/Aerial_Lift.page",
+					"_Name": "TabItem0"
+				},
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "Daily Check Sheet - Derrick Digger",
+					"PageToOpen": "/MDK_Hydraulic/Pages/Derrick_Digger.page",
+					"_Name": "TabItem1"
+				}
+			],
+			"Position": "Top",
+			"TabStripType": "Segmented"
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "/MDK_Hydraulic/Services/SampleServiceV2.service",
+		"EntitySet": "Customers"
+	},
+	"_Type": "Page",
+	"_Name": "Hydraulic_Inspection",
+	"Caption": "Hydraulic Inspection Form"
+}
