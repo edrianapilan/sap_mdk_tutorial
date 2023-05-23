@@ -85,7 +85,11 @@
 					],
 					"Visible": true
 				}
-			]
+			],
+			"LoadingIndicator": {
+				"Enabled": false,
+				"Text": ""
+			}
 		}
 	],
 	"_Type": "Page",

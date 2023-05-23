@@ -5,10 +5,10 @@
 		"name": "Run WebApplicationFactory",
 		"type": "node",
 		"request": "launch",
-		"program": "${workspaceFolder}/nsMDK_Annotations-approuter/node_modules/@sap/html5-repo-mock/index.js",
+		"program": "${workspaceFolder}/nsDemoSampleApp-approuter/node_modules/@sap/html5-repo-mock/index.js",
 		"args": [
 		  "--standalone",
-		  "/nsMDK_Annotations/index.html",
+		  "/nsDemoSampleApp/index.html",
 		  "--ui5",
 		  "{\"version\":\".\"}"
 		],

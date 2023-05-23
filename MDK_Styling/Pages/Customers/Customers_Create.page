@@ -1,97 +1,107 @@
 {
-	"ActionBar": {
-		"Items": [
-			{
-				"OnPress": "/MDK_Styling/Actions/CloseModalPage_Cancel.action",
-				"Position": "Left",
-				"SystemItem": "Cancel"
-			},
-			{
-				"OnPress": "/MDK_Styling/Actions/Customers/Customers_CreateEntity.action",
-				"Position": "Right",
-				"SystemItem": "Save"
-			}
-		]
-	},
-	"Caption": "Create Customer Detail",
 	"Controls": [
 		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
 			"Sections": [
 				{
-					"_Type": "Section.Type.FormCell",
-					"_Name": "SectionFormCell0",
-					"Visible": true,
 					"Controls": [
 						{
-							"Caption": "City",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "City",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "City"
 						},
 						{
-							"Caption": "Country",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Country",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "Country"
 						},
 						{
-							"Caption": "CustomerId",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "CustomerId",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "CustomerId"
 						},
 						{
-							"Mode": "Datetime",
+							"_Type": "Control.Type.FormCell.DatePicker",
 							"_Name": "DateOfBirth",
 							"Caption": "DateOfBirth",
-							"_Type": "Control.Type.FormCell.DatePicker"
+							"Mode": "Datetime"
 						},
 						{
-							"Caption": "EmailAddress",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "EmailAddress",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "EmailAddress"
 						},
 						{
-							"Caption": "FirstName",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "FirstName",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "FirstName"
 						},
 						{
-							"Caption": "HouseNumber",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "HouseNumber",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "HouseNumber"
 						},
 						{
-							"Caption": "LastName",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "LastName",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "LastName"
 						},
 						{
-							"Caption": "PhoneNumber",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "PhoneNumber",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "PhoneNumber"
 						},
 						{
-							"Caption": "PostalCode",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "PostalCode",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "PostalCode"
 						},
 						{
-							"Caption": "Street",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
 							"_Name": "Street",
-							"_Type": "Control.Type.FormCell.SimpleProperty"
+							"Caption": "Street"
 						},
 						{
-							"Mode": "Datetime",
+							"_Type": "Control.Type.FormCell.DatePicker",
 							"_Name": "UpdatedTimestamp",
 							"Caption": "UpdatedTimestamp",
-							"_Type": "Control.Type.FormCell.DatePicker"
+							"Mode": "Datetime"
 						}
-					]
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
 				}
-			],
-			"_Name": "SectionedTable0",
-			"_Type": "Control.Type.SectionedTable"
+			]
 		}
 	],
 	"_Type": "Page",
 	"_Name": "Customers_Create",
-	"PrefersLargeCaption": true
+	"Caption": "Create Customer Detail",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"OnPress": "/MDK_Styling/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"OnPress": "/MDK_Styling/Actions/Customers/Customers_CreateEntity.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
 }
