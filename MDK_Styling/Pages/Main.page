@@ -12,15 +12,15 @@
 					},
 					"Buttons": [
 						{
+							"Styles": {
+								"Button": "MyCustomerButton"
+							},
 							"_Name": "SectionButton0",
 							"Title": "Customers",
 							"Alignment": "Center",
 							"ButtonType": "Text",
 							"Semantic": "Tint",
 							"ImagePosition": "Leading",
-							"Styles": {
-								"Button": "MyCustomerButton"
-							},
 							"OnPress": "/MDK_Styling/Actions/Customers/NavToCustomers_List.action"
 						},
 						{

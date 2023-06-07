@@ -1,17 +1,7 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory();
-	else if(typeof define === 'function' && define.amd)
-		define([], factory);
-	else {
-		var a = factory();
-		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
-	}
-})(this, () => {
-return /******/ (() => { // webpackBootstrap
+/******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./build.definitions/DemoSampleApp/i18n/i18n.properties":
+/***/ 2255:
 /*!**************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/i18n/i18n.properties ***!
   \**************************************************************/
@@ -21,7 +11,7 @@ module.exports = ""
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js":
+/***/ 2284:
 /*!*******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js ***!
   \*******************************************************************/
@@ -80,7 +70,7 @@ function AppUpdateFailure(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js":
+/***/ 6154:
 /*!*******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js ***!
   \*******************************************************************/
@@ -133,7 +123,7 @@ function AppUpdateSuccess(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js":
+/***/ 6065:
 /*!*******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js ***!
   \*******************************************************************************/
@@ -160,7 +150,7 @@ function Customers_DeleteConfirmation(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js":
+/***/ 8159:
 /*!***********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js ***!
   \***********************************************************************/
@@ -186,7 +176,7 @@ function CustomerOrderCount(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/EmailValidation.js":
+/***/ 5605:
 /*!******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/EmailValidation.js ***!
   \******************************************************************/
@@ -214,7 +204,7 @@ function EmailValidation(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js":
+/***/ 3452:
 /*!**********************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js ***!
   \**********************************************************************************************/
@@ -241,7 +231,7 @@ function CheckForSyncError(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js":
+/***/ 3926:
 /*!***************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js ***!
   \***************************************************************/
@@ -268,7 +258,7 @@ function OnWillUpdate(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js":
+/***/ 6773:
 /*!****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js ***!
   \****************************************************************************/
@@ -306,33 +296,33 @@ function ResetAppSettingsAndLogout(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.css":
+/***/ 6356:
 /*!***********************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Styles/Styles.css ***!
   \***********************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
-var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ 8899);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ 4308);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n", "",{"version":3,"sources":["webpack://./build.definitions/DemoSampleApp/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n", "",{"version":3,"sources":["webpack://./build.definitions/DemoSampleApp/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.less":
+/***/ 1011:
 /*!************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Styles/Styles.less ***!
   \************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
-var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ 8899);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ 4308);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/", "",{"version":3,"sources":["webpack://./build.definitions/DemoSampleApp/Styles/Styles.less"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/"],"sourceRoot":""}]);
@@ -342,15 +332,15 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.nss":
-/*!***********************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.nss ***!
-  \***********************************************************/
+/***/ 2291:
+/*!*****************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Styles/Styles.light.css ***!
+  \*****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
-var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js");
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ 8899);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ 4308);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
 ___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
@@ -360,7 +350,25 @@ module.exports = ___CSS_LOADER_EXPORT___;
 
 /***/ }),
 
-/***/ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js":
+/***/ 6751:
+/*!*****************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Styles/Styles.light.nss ***!
+  \*****************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// Imports
+var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ 8899);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ 4308);
+var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "", "",{"version":3,"sources":[],"names":[],"mappings":"","sourceRoot":""}]);
+// Exports
+module.exports = ___CSS_LOADER_EXPORT___;
+
+
+/***/ }),
+
+/***/ 4308:
 /*!***********************************************************************************************************************!*\
   !*** ../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js ***!
   \***********************************************************************************************************************/
@@ -436,7 +444,7 @@ module.exports = function (cssWithMappingToString) {
 
 /***/ }),
 
-/***/ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js":
+/***/ 8899:
 /*!******************************************************************************************************************************************!*\
   !*** ../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/cssWithMappingToString.js ***!
   \******************************************************************************************************************************************/
@@ -478,7 +486,7 @@ module.exports = function cssWithMappingToString(item) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Create.page":
+/***/ 8770:
 /*!*********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Customers_Create.page ***!
   \*********************************************************************/
@@ -488,7 +496,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Detail.page":
+/***/ 9955:
 /*!*********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Customers_Detail.page ***!
   \*********************************************************************/
@@ -498,7 +506,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Edit.page":
+/***/ 4342:
 /*!*******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Customers_Edit.page ***!
   \*******************************************************************/
@@ -508,17 +516,17 @@ module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_List.page":
+/***/ 7857:
 /*!*******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Customers_List.page ***!
   \*******************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"_Type":"Section.Type.ContactCell","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers","QueryOptions":"$orderby=LastName"},"_Name":"SectionContactCell0","Visible":true,"EmptySection":{"FooterVisible":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"ContactCell":{"ContextMenu":{"PerformFirstActionWithFullSwipe":true,"Items":[]},"DetailImage":"","Headline":"{LastName}","Subheadline":"{FirstName}","Description":"{City}","OnPress":"/DemoSampleApp/Actions/NavToCustomers_Detail.action","ActivityItems":[{"_Name":"SectionContactCell0ActivityItems0","ActivityType":"Phone","ActivityValue":"{PhoneNumber}"},{"_Name":"SectionContactCell0ActivityItems1","ActivityType":"Email","ActivityValue":"{EmailAddress}"}]},"Search":{"Enabled":true,"BarcodeScanner":true}}]}],"_Type":"Page","_Name":"Customers_List","Caption":"Customers","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Add","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Create.action"}],"_Name":"ActionBar1"}}
+module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"_Type":"Section.Type.ContactCell","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers","QueryOptions":"$orderby=LastName"},"_Name":"SectionContactCell0","Visible":true,"EmptySection":{"FooterVisible":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"ContactCell":{"ContextMenu":{"PerformFirstActionWithFullSwipe":true,"Items":[]},"DetailImage":"","Headline":"{LastName}","Subheadline":"{FirstName}","Description":"City {City}","OnPress":"/DemoSampleApp/Actions/NavToCustomers_Detail.action","ActivityItems":[{"_Name":"SectionContactCell0ActivityItems0","ActivityType":"Phone","ActivityValue":"{PhoneNumber}"},{"_Name":"SectionContactCell0ActivityItems1","ActivityType":"Email","ActivityValue":"{EmailAddress}"}]},"Search":{"Enabled":true,"BarcodeScanner":true}}]}],"_Type":"Page","_Name":"Customers_List","Caption":"Customers","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Add","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Create.action"}],"_Name":"ActionBar1"}}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Orders.page":
+/***/ 8621:
 /*!*********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Customers_Orders.page ***!
   \*********************************************************************/
@@ -528,7 +536,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page":
+/***/ 3737:
 /*!*************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page ***!
   \*************************************************************************************/
@@ -538,7 +546,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page":
+/***/ 5654:
 /*!***********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page ***!
   \***********************************************************************************/
@@ -548,7 +556,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Main.page":
+/***/ 237:
 /*!*********************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/Main.page ***!
   \*********************************************************/
@@ -558,7 +566,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page":
+/***/ 7146:
 /*!*****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page ***!
   \*****************************************************************************/
@@ -568,7 +576,7 @@ module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page":
+/***/ 5812:
 /*!************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page ***!
   \************************************************************************/
@@ -578,17 +586,17 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
 
 /***/ }),
 
-/***/ "./build.definitions/Application.app":
+/***/ 3768:
 /*!*******************************************!*\
   !*** ./build.definitions/Application.app ***!
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = {"_Name":"DemoSampleApp","Version":"/DemoSampleApp/Globals/AppDefinition_Version.global","MainPage":"/DemoSampleApp/Pages/Main.page","OnLaunch":["/DemoSampleApp/Actions/Service/InitializeOffline.action"],"OnWillUpdate":"/DemoSampleApp/Rules/OnWillUpdate.js","OnDidUpdate":"/DemoSampleApp/Actions/Service/InitializeOffline.action","Styles":"/DemoSampleApp/Styles/Styles.less","Localization":"/DemoSampleApp/i18n/i18n.properties","_SchemaVersion":"23.4","StyleSheets":{"Styles":{"css":"/DemoSampleApp/Styles/Styles.css","ios":"/DemoSampleApp/Styles/Styles.nss","android":"/DemoSampleApp/Styles/Styles.json"}}}
+module.exports = {"_Name":"DemoSampleApp","Version":"/DemoSampleApp/Globals/AppDefinition_Version.global","MainPage":"/DemoSampleApp/Pages/Main.page","OnLaunch":["/DemoSampleApp/Actions/Service/InitializeOffline.action"],"OnWillUpdate":"/DemoSampleApp/Rules/OnWillUpdate.js","OnDidUpdate":"/DemoSampleApp/Actions/Service/InitializeOffline.action","Styles":"/DemoSampleApp/Styles/Styles.css","Localization":"/DemoSampleApp/i18n/i18n.properties","_SchemaVersion":"23.4","StyleSheets":{"Styles":{"css":"/DemoSampleApp/Styles/Styles.light.css","ios":"/DemoSampleApp/Styles/Styles.light.nss","android":"/DemoSampleApp/Styles/Styles.light.json"}},"SDKStyles":{"ios":"/DemoSampleApp/Styles/Styles.light.nss","android":"/DemoSampleApp/Styles/Styles.light.json"}}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdate.action":
+/***/ 3971:
 /*!******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/AppUpdate.action ***!
   \******************************************************************/
@@ -598,7 +606,7 @@ module.exports = {"_Type":"Action.Type.ApplicationUpdate","ActionResult":{"_Name
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action":
+/***/ 5407:
 /*!********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action ***!
   \********************************************************************************/
@@ -608,7 +616,7 @@ module.exports = {"Message":"Failed to update application - {#ActionResults:AppU
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action":
+/***/ 6133:
 /*!********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action ***!
   \********************************************************************************/
@@ -618,7 +626,7 @@ module.exports = {"Animated":true,"CompletionTimeout":3,"Message":"Checking for 
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action":
+/***/ 2057:
 /*!********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action ***!
   \********************************************************************************/
@@ -628,7 +636,7 @@ module.exports = {"Animated":true,"Duration":2,"Message":"Update application com
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action":
+/***/ 5070:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action ***!
   \******************************************************************************/
@@ -638,7 +646,7 @@ module.exports = {"_Type":"Action.Type.ClosePage","ActionResult":{"_Name":"Close
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action":
+/***/ 8433:
 /*!********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action ***!
   \********************************************************************************/
@@ -648,7 +656,7 @@ module.exports = {"_Type":"Action.Type.ClosePage","ActionResult":{"_Name":"Close
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ClosePage.action":
+/***/ 8692:
 /*!******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/ClosePage.action ***!
   \******************************************************************/
@@ -658,7 +666,7 @@ module.exports = {"_Type":"Action.Type.ClosePage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action":
+/***/ 7967:
 /*!*******************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action ***!
   \*******************************************************************************************/
@@ -668,7 +676,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"CreateC
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action":
+/***/ 632:
 /*!***************************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action ***!
   \***************************************************************************************************/
@@ -678,7 +686,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"CreateS
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action":
+/***/ 3385:
 /*!*******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action ***!
   \*******************************************************************************/
@@ -688,7 +696,7 @@ module.exports = {"_Type":"Action.Type.ODataService.CreateEntity","ActionResult"
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action":
+/***/ 7106:
 /*!*************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action ***!
   \*************************************************************************************/
@@ -698,7 +706,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"Custome
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action":
+/***/ 948:
 /*!*******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action ***!
   \*******************************************************************************/
@@ -708,7 +716,7 @@ module.exports = {"_Type":"Action.Type.ODataService.DeleteEntity","ActionResult"
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action":
+/***/ 3570:
 /*!*******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action ***!
   \*******************************************************************************/
@@ -718,7 +726,7 @@ module.exports = {"_Type":"Action.Type.ODataService.UpdateEntity","ActionResult"
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action":
+/***/ 9503:
 /*!*******************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action ***!
   \*******************************************************************************************/
@@ -728,7 +736,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"DeleteC
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action":
+/***/ 958:
 /*!**********************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action ***!
   \**********************************************************************************************/
@@ -738,7 +746,7 @@ module.exports = {"_Type":"Action.Type.BannerMessage","Message":"Upload failed!"
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action":
+/***/ 7210:
 /*!**********************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action ***!
   \**********************************************************************************************/
@@ -748,7 +756,7 @@ module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/DemoSampleApp/
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action":
+/***/ 4136:
 /*!********************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action ***!
   \********************************************************************************************/
@@ -758,7 +766,7 @@ module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/DemoSampleApp/
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogSetLevel.action":
+/***/ 8215:
 /*!********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogSetLevel.action ***!
   \********************************************************************/
@@ -768,7 +776,7 @@ module.exports = {"_Type":"Action.Type.Logger.SetLevel","ActionResult":{"_Name":
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogSetState.action":
+/***/ 9993:
 /*!********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogSetState.action ***!
   \********************************************************************/
@@ -778,7 +786,7 @@ module.exports = {"_Type":"Action.Type.Logger.SetState","ActionResult":{"_Name":
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUpload.action":
+/***/ 6127:
 /*!******************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogUpload.action ***!
   \******************************************************************/
@@ -788,7 +796,7 @@ module.exports = {"_Type":"Action.Type.Logger.Upload","ActionResult":{"_Name":"L
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action":
+/***/ 9040:
 /*!*************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action ***!
   \*************************************************************************/
@@ -798,7 +806,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"LogUplo
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action":
+/***/ 7343:
 /*!****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action ***!
   \****************************************************************************/
@@ -808,7 +816,7 @@ module.exports = {"_Type":"Action.Type.ToastMessage","ActionResult":{"_Name":"Lo
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Logout.action":
+/***/ 1569:
 /*!***************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Logout.action ***!
   \***************************************************************/
@@ -818,7 +826,7 @@ module.exports = {"SkipReset":false,"_Type":"Action.Type.Logout"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogoutMessage.action":
+/***/ 7842:
 /*!**********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/LogoutMessage.action ***!
   \**********************************************************************/
@@ -828,7 +836,7 @@ module.exports = {"CancelCaption":"No","Message":"This action will remove all da
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action":
+/***/ 6343:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action ***!
   \******************************************************************************/
@@ -838,7 +846,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action":
+/***/ 873:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action ***!
   \******************************************************************************/
@@ -848,7 +856,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action":
+/***/ 2656:
 /*!****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action ***!
   \****************************************************************************/
@@ -858,7 +866,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action":
+/***/ 7360:
 /*!****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action ***!
   \****************************************************************************/
@@ -868,7 +876,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action":
+/***/ 2157:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action ***!
   \******************************************************************************/
@@ -878,7 +886,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action":
+/***/ 2802:
 /*!**************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action ***!
   \**************************************************************************************/
@@ -888,7 +896,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action":
+/***/ 3814:
 /*!*********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action ***!
   \*********************************************************************************/
@@ -898,7 +906,7 @@ module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavT
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action":
+/***/ 3581:
 /*!*********************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action ***!
   \*********************************************************************/
@@ -908,7 +916,7 @@ module.exports = {"_Type":"Action.Type.Message","Message":"A new version of the 
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action":
+/***/ 8711:
 /*!***************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action ***!
   \***************************************************************************************/
@@ -918,7 +926,7 @@ module.exports = {"_Type":"Action.Type.ODataService.CreateRelatedEntity","Action
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action":
+/***/ 7059:
 /*!*****************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action ***!
   \*****************************************************************************/
@@ -928,7 +936,7 @@ module.exports = {"_Type":"Action.Type.OfflineOData.Close","Service":"/DemoSampl
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action":
+/***/ 4223:
 /*!*******************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action ***!
   \*******************************************************************************************/
@@ -938,7 +946,7 @@ module.exports = {"Message":"Failure closing data service - {#ActionResults:clos
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action":
+/***/ 4317:
 /*!*******************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action ***!
   \*******************************************************************************************/
@@ -948,7 +956,7 @@ module.exports = {"Message":"Data service closed successfully","NumberOfLines":1
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action":
+/***/ 8914:
 /*!********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action ***!
   \********************************************************************************/
@@ -958,7 +966,7 @@ module.exports = {"Service":"/DemoSampleApp/Services/SampleServiceV2.service","D
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action":
+/***/ 4734:
 /*!***************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action ***!
   \***************************************************************************************/
@@ -968,7 +976,7 @@ module.exports = {"Message":"Download in progress...","CompletionMessage":"Downl
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action":
+/***/ 9789:
 /*!**********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action ***!
   \**********************************************************************************/
@@ -978,7 +986,7 @@ module.exports = {"_Type":"Action.Type.ODataService.Initialize","ActionResult":{
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action":
+/***/ 1404:
 /*!************************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action ***!
   \************************************************************************************************/
@@ -988,7 +996,7 @@ module.exports = {"Message":"Failed to initialize application data service - {#A
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action":
+/***/ 7254:
 /*!************************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action ***!
   \************************************************************************************************/
@@ -998,7 +1006,7 @@ module.exports = {"Animated":true,"Duration":2,"Message":"Application data servi
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action":
+/***/ 7871:
 /*!***********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action ***!
   \***********************************************************************************/
@@ -1008,7 +1016,7 @@ module.exports = {"Message":"Sync offline data service failure - {#ActionResults
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action":
+/***/ 8978:
 /*!***********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action ***!
   \***********************************************************************************/
@@ -1018,7 +1026,7 @@ module.exports = {"Message":"Upload in progress...","CompletionMessage":"Sync co
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action":
+/***/ 9118:
 /*!***********************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action ***!
   \***********************************************************************************/
@@ -1028,7 +1036,7 @@ module.exports = {"Animated":true,"Duration":2,"Message":"Sync offline data serv
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action":
+/***/ 8651:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action ***!
   \******************************************************************************/
@@ -1038,7 +1046,7 @@ module.exports = {"Service":"/DemoSampleApp/Services/SampleServiceV2.service","_
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action":
+/***/ 5677:
 /*!*******************************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action ***!
   \*******************************************************************************************/
@@ -1048,7 +1056,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"UpdateC
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ValidationFailure.action":
+/***/ 1843:
 /*!**************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Actions/ValidationFailure.action ***!
   \**************************************************************************/
@@ -1058,7 +1066,7 @@ module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"Validat
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global":
+/***/ 6776:
 /*!******************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global ***!
   \******************************************************************************/
@@ -1068,7 +1076,7 @@ module.exports = {"Value":"1.0.0","_Type":"String"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Services/SampleServiceV2.service":
+/***/ 5550:
 /*!**************************************************************************!*\
   !*** ./build.definitions/DemoSampleApp/Services/SampleServiceV2.service ***!
   \**************************************************************************/
@@ -1078,7 +1086,7 @@ module.exports = {"DestinationName":"SampleServiceV2","OfflineEnabled":true,"Lan
 
 /***/ }),
 
-/***/ "./build.definitions/version.mdkbundlerversion":
+/***/ 3405:
 /*!*****************************************************!*\
   !*** ./build.definitions/version.mdkbundlerversion ***!
   \*****************************************************/
@@ -1088,88 +1096,89 @@ module.exports = "1.1\n"
 
 /***/ }),
 
-/***/ "./build.definitions/application-index.js":
+/***/ 6280:
 /*!************************************************!*\
   !*** ./build.definitions/application-index.js ***!
   \************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-let application_app = __webpack_require__(/*! ./Application.app */ "./build.definitions/Application.app")
-let demosampleapp_actions_appupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdate.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdate.action")
-let demosampleapp_actions_appupdatefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action")
-let demosampleapp_actions_appupdateprogressbanner_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateProgressBanner.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action")
-let demosampleapp_actions_appupdatesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action")
-let demosampleapp_actions_closemodalpage_cancel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Cancel.action */ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action")
-let demosampleapp_actions_closemodalpage_complete_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Complete.action */ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action")
-let demosampleapp_actions_closepage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ClosePage.action */ "./build.definitions/DemoSampleApp/Actions/ClosePage.action")
-let demosampleapp_actions_createcustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action")
-let demosampleapp_actions_createsalesorderheaderentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action")
-let demosampleapp_actions_customers_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_CreateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action")
-let demosampleapp_actions_customers_deleteconfirmation_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteConfirmation.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action")
-let demosampleapp_actions_customers_deleteentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action")
-let demosampleapp_actions_customers_updateentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_UpdateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action")
-let demosampleapp_actions_deletecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action")
-let demosampleapp_actions_errorarchive_errorarchive_syncfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action")
-let demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action")
-let demosampleapp_actions_errorarchive_navtoerrorarchive_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action")
-let demosampleapp_actions_logout_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Logout.action */ "./build.definitions/DemoSampleApp/Actions/Logout.action")
-let demosampleapp_actions_logoutmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogoutMessage.action */ "./build.definitions/DemoSampleApp/Actions/LogoutMessage.action")
-let demosampleapp_actions_logsetlevel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetLevel.action */ "./build.definitions/DemoSampleApp/Actions/LogSetLevel.action")
-let demosampleapp_actions_logsetstate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetState.action */ "./build.definitions/DemoSampleApp/Actions/LogSetState.action")
-let demosampleapp_actions_logupload_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUpload.action */ "./build.definitions/DemoSampleApp/Actions/LogUpload.action")
-let demosampleapp_actions_loguploadfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadFailure.action */ "./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action")
-let demosampleapp_actions_loguploadsuccessful_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadSuccessful.action */ "./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action")
-let demosampleapp_actions_navtocustomers_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Create.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action")
-let demosampleapp_actions_navtocustomers_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Detail.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action")
-let demosampleapp_actions_navtocustomers_edit_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Edit.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action")
-let demosampleapp_actions_navtocustomers_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_List.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action")
-let demosampleapp_actions_navtocustomers_orders_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Orders.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action")
-let demosampleapp_actions_navtosalesorderheaders_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action */ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action")
-let demosampleapp_actions_navtosalesorders_details_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrders_Details.action */ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action")
-let demosampleapp_actions_onwillupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/OnWillUpdate.action */ "./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action")
-let demosampleapp_actions_salesorderheaders_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action */ "./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action")
-let demosampleapp_actions_service_closeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action")
-let demosampleapp_actions_service_closeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action")
-let demosampleapp_actions_service_closeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action")
-let demosampleapp_actions_service_downloadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action")
-let demosampleapp_actions_service_downloadstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadStartedMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action")
-let demosampleapp_actions_service_initializeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action")
-let demosampleapp_actions_service_initializeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action")
-let demosampleapp_actions_service_initializeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action")
-let demosampleapp_actions_service_syncfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action")
-let demosampleapp_actions_service_syncstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncStartedMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action")
-let demosampleapp_actions_service_syncsuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action")
-let demosampleapp_actions_service_uploadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/UploadOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action")
-let demosampleapp_actions_updatecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action")
-let demosampleapp_actions_validationfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ValidationFailure.action */ "./build.definitions/DemoSampleApp/Actions/ValidationFailure.action")
-let demosampleapp_globals_appdefinition_version_global = __webpack_require__(/*! ./DemoSampleApp/Globals/AppDefinition_Version.global */ "./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global")
-let demosampleapp_i18n_i18n_properties = __webpack_require__(/*! ./DemoSampleApp/i18n/i18n.properties */ "./build.definitions/DemoSampleApp/i18n/i18n.properties")
-let demosampleapp_jsconfig_json = __webpack_require__(/*! ./DemoSampleApp/jsconfig.json */ "./build.definitions/DemoSampleApp/jsconfig.json")
-let demosampleapp_pages_customers_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Create.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Create.page")
-let demosampleapp_pages_customers_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Detail.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Detail.page")
-let demosampleapp_pages_customers_edit_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Edit.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Edit.page")
-let demosampleapp_pages_customers_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_List.page */ "./build.definitions/DemoSampleApp/Pages/Customers_List.page")
-let demosampleapp_pages_customers_orders_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Orders.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Orders.page")
-let demosampleapp_pages_errorarchive_errorarchive_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page */ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page")
-let demosampleapp_pages_errorarchive_errorarchive_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page */ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page")
-let demosampleapp_pages_main_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Main.page */ "./build.definitions/DemoSampleApp/Pages/Main.page")
-let demosampleapp_pages_salesorderheaders_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrderHeaders_Create.page */ "./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page")
-let demosampleapp_pages_salesorders_details_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrders_Details.page */ "./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page")
-let demosampleapp_rules_appupdatefailure_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateFailure.js */ "./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js")
-let demosampleapp_rules_appupdatesuccess_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateSuccess.js */ "./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js")
-let demosampleapp_rules_customers_deleteconfirmation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_DeleteConfirmation.js */ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js")
-let demosampleapp_rules_customers_ordercount_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_OrderCount.js */ "./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js")
-let demosampleapp_rules_emailvalidation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/EmailValidation.js */ "./build.definitions/DemoSampleApp/Rules/EmailValidation.js")
-let demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js */ "./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js")
-let demosampleapp_rules_onwillupdate_js = __webpack_require__(/*! ./DemoSampleApp/Rules/OnWillUpdate.js */ "./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js")
-let demosampleapp_rules_resetappsettingsandlogout_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ResetAppSettingsAndLogout.js */ "./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js")
-let demosampleapp_services_sampleservicev2_service = __webpack_require__(/*! ./DemoSampleApp/Services/SampleServiceV2.service */ "./build.definitions/DemoSampleApp/Services/SampleServiceV2.service")
-let demosampleapp_styles_styles_css = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.css */ "./build.definitions/DemoSampleApp/Styles/Styles.css")
-let demosampleapp_styles_styles_json = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.json */ "./build.definitions/DemoSampleApp/Styles/Styles.json")
-let demosampleapp_styles_styles_less = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.less */ "./build.definitions/DemoSampleApp/Styles/Styles.less")
-let demosampleapp_styles_styles_nss = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.nss */ "./build.definitions/DemoSampleApp/Styles/Styles.nss")
-let tsconfig_json = __webpack_require__(/*! ./tsconfig.json */ "./build.definitions/tsconfig.json")
-let version_mdkbundlerversion = __webpack_require__(/*! ./version.mdkbundlerversion */ "./build.definitions/version.mdkbundlerversion")
+let application_app = __webpack_require__(/*! ./Application.app */ 3768)
+let demosampleapp_actions_appupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdate.action */ 3971)
+let demosampleapp_actions_appupdatefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateFailureMessage.action */ 5407)
+let demosampleapp_actions_appupdateprogressbanner_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateProgressBanner.action */ 6133)
+let demosampleapp_actions_appupdatesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateSuccessMessage.action */ 2057)
+let demosampleapp_actions_closemodalpage_cancel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Cancel.action */ 5070)
+let demosampleapp_actions_closemodalpage_complete_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Complete.action */ 8433)
+let demosampleapp_actions_closepage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ClosePage.action */ 8692)
+let demosampleapp_actions_createcustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action */ 7967)
+let demosampleapp_actions_createsalesorderheaderentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action */ 632)
+let demosampleapp_actions_customers_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_CreateEntity.action */ 3385)
+let demosampleapp_actions_customers_deleteconfirmation_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteConfirmation.action */ 7106)
+let demosampleapp_actions_customers_deleteentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteEntity.action */ 948)
+let demosampleapp_actions_customers_updateentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_UpdateEntity.action */ 3570)
+let demosampleapp_actions_deletecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action */ 9503)
+let demosampleapp_actions_errorarchive_errorarchive_syncfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action */ 958)
+let demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action */ 7210)
+let demosampleapp_actions_errorarchive_navtoerrorarchive_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action */ 4136)
+let demosampleapp_actions_logout_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Logout.action */ 1569)
+let demosampleapp_actions_logoutmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogoutMessage.action */ 7842)
+let demosampleapp_actions_logsetlevel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetLevel.action */ 8215)
+let demosampleapp_actions_logsetstate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetState.action */ 9993)
+let demosampleapp_actions_logupload_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUpload.action */ 6127)
+let demosampleapp_actions_loguploadfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadFailure.action */ 9040)
+let demosampleapp_actions_loguploadsuccessful_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadSuccessful.action */ 7343)
+let demosampleapp_actions_navtocustomers_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Create.action */ 6343)
+let demosampleapp_actions_navtocustomers_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Detail.action */ 873)
+let demosampleapp_actions_navtocustomers_edit_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Edit.action */ 2656)
+let demosampleapp_actions_navtocustomers_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_List.action */ 7360)
+let demosampleapp_actions_navtocustomers_orders_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Orders.action */ 2157)
+let demosampleapp_actions_navtosalesorderheaders_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action */ 2802)
+let demosampleapp_actions_navtosalesorders_details_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrders_Details.action */ 3814)
+let demosampleapp_actions_onwillupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/OnWillUpdate.action */ 3581)
+let demosampleapp_actions_salesorderheaders_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action */ 8711)
+let demosampleapp_actions_service_closeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOffline.action */ 7059)
+let demosampleapp_actions_service_closeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action */ 4223)
+let demosampleapp_actions_service_closeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action */ 4317)
+let demosampleapp_actions_service_downloadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadOffline.action */ 8914)
+let demosampleapp_actions_service_downloadstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadStartedMessage.action */ 4734)
+let demosampleapp_actions_service_initializeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOffline.action */ 9789)
+let demosampleapp_actions_service_initializeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action */ 1404)
+let demosampleapp_actions_service_initializeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action */ 7254)
+let demosampleapp_actions_service_syncfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncFailureMessage.action */ 7871)
+let demosampleapp_actions_service_syncstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncStartedMessage.action */ 8978)
+let demosampleapp_actions_service_syncsuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncSuccessMessage.action */ 9118)
+let demosampleapp_actions_service_uploadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/UploadOffline.action */ 8651)
+let demosampleapp_actions_updatecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action */ 5677)
+let demosampleapp_actions_validationfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ValidationFailure.action */ 1843)
+let demosampleapp_globals_appdefinition_version_global = __webpack_require__(/*! ./DemoSampleApp/Globals/AppDefinition_Version.global */ 6776)
+let demosampleapp_i18n_i18n_properties = __webpack_require__(/*! ./DemoSampleApp/i18n/i18n.properties */ 2255)
+let demosampleapp_jsconfig_json = __webpack_require__(/*! ./DemoSampleApp/jsconfig.json */ 738)
+let demosampleapp_pages_customers_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Create.page */ 8770)
+let demosampleapp_pages_customers_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Detail.page */ 9955)
+let demosampleapp_pages_customers_edit_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Edit.page */ 4342)
+let demosampleapp_pages_customers_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_List.page */ 7857)
+let demosampleapp_pages_customers_orders_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Orders.page */ 8621)
+let demosampleapp_pages_errorarchive_errorarchive_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page */ 3737)
+let demosampleapp_pages_errorarchive_errorarchive_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page */ 5654)
+let demosampleapp_pages_main_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Main.page */ 237)
+let demosampleapp_pages_salesorderheaders_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrderHeaders_Create.page */ 7146)
+let demosampleapp_pages_salesorders_details_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrders_Details.page */ 5812)
+let demosampleapp_rules_appupdatefailure_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateFailure.js */ 2284)
+let demosampleapp_rules_appupdatesuccess_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateSuccess.js */ 6154)
+let demosampleapp_rules_customers_deleteconfirmation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_DeleteConfirmation.js */ 6065)
+let demosampleapp_rules_customers_ordercount_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_OrderCount.js */ 8159)
+let demosampleapp_rules_emailvalidation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/EmailValidation.js */ 5605)
+let demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js */ 3452)
+let demosampleapp_rules_onwillupdate_js = __webpack_require__(/*! ./DemoSampleApp/Rules/OnWillUpdate.js */ 3926)
+let demosampleapp_rules_resetappsettingsandlogout_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ResetAppSettingsAndLogout.js */ 6773)
+let demosampleapp_services_sampleservicev2_service = __webpack_require__(/*! ./DemoSampleApp/Services/SampleServiceV2.service */ 5550)
+let demosampleapp_styles_styles_css = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.css */ 6356)
+let demosampleapp_styles_styles_less = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.less */ 1011)
+let demosampleapp_styles_styles_light_css = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.light.css */ 2291)
+let demosampleapp_styles_styles_light_json = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.light.json */ 8931)
+let demosampleapp_styles_styles_light_nss = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.light.nss */ 6751)
+let tsconfig_json = __webpack_require__(/*! ./tsconfig.json */ 7775)
+let version_mdkbundlerversion = __webpack_require__(/*! ./version.mdkbundlerversion */ 3405)
 
 module.exports = {
 	application_app : application_app,
@@ -1243,19 +1252,61 @@ module.exports = {
 	demosampleapp_rules_resetappsettingsandlogout_js : demosampleapp_rules_resetappsettingsandlogout_js,
 	demosampleapp_services_sampleservicev2_service : demosampleapp_services_sampleservicev2_service,
 	demosampleapp_styles_styles_css : demosampleapp_styles_styles_css,
-	demosampleapp_styles_styles_json : demosampleapp_styles_styles_json,
 	demosampleapp_styles_styles_less : demosampleapp_styles_styles_less,
-	demosampleapp_styles_styles_nss : demosampleapp_styles_styles_nss,
+	demosampleapp_styles_styles_light_css : demosampleapp_styles_styles_light_css,
+	demosampleapp_styles_styles_light_json : demosampleapp_styles_styles_light_json,
+	demosampleapp_styles_styles_light_nss : demosampleapp_styles_styles_light_nss,
 	tsconfig_json : tsconfig_json,
 	version_mdkbundlerversion : version_mdkbundlerversion
 }
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.json":
-/*!************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.json ***!
-  \************************************************************/
+/***/ 9568:
+/*!***********************!*\
+  !*** container entry ***!
+  \***********************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+var moduleMap = {
+	".": () => {
+		return Promise.resolve().then(() => (() => ((__webpack_require__(/*! ./build.definitions/application-index.js */ 6280)))));
+	}
+};
+var get = (module, getScope) => {
+	__webpack_require__.R = getScope;
+	getScope = (
+		__webpack_require__.o(moduleMap, module)
+			? moduleMap[module]()
+			: Promise.resolve().then(() => {
+				throw new Error('Module "' + module + '" does not exist in container.');
+			})
+	);
+	__webpack_require__.R = undefined;
+	return getScope;
+};
+var init = (shareScope, initScope) => {
+	if (!__webpack_require__.S) return;
+	var name = "default"
+	var oldScope = __webpack_require__.S[name];
+	if(oldScope && oldScope !== shareScope) throw new Error("Container initialization failed as it has already been initialized with a different share scope");
+	__webpack_require__.S[name] = shareScope;
+	return __webpack_require__.I(name, initScope);
+};
+
+// This exports getters to disallow modifications
+__webpack_require__.d(exports, {
+	get: () => (get),
+	init: () => (init)
+});
+
+/***/ }),
+
+/***/ 8931:
+/*!******************************************************************!*\
+  !*** ./build.definitions/DemoSampleApp/Styles/Styles.light.json ***!
+  \******************************************************************/
 /***/ ((module) => {
 
 "use strict";
@@ -1263,7 +1314,7 @@ module.exports = {};
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/jsconfig.json":
+/***/ 738:
 /*!*******************************************************!*\
   !*** ./build.definitions/DemoSampleApp/jsconfig.json ***!
   \*******************************************************/
@@ -1274,7 +1325,7 @@ module.exports = JSON.parse('{"include":["Rules/**/*",".typings/**/*"]}');
 
 /***/ }),
 
-/***/ "./build.definitions/tsconfig.json":
+/***/ 7775:
 /*!*****************************************!*\
   !*** ./build.definitions/tsconfig.json ***!
   \*****************************************/
@@ -1311,6 +1362,12 @@ module.exports = JSON.parse('{"compilerOptions":{"target":"es2015","module":"esn
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
+/******/ 	
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = __webpack_module_cache__;
+/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
@@ -1340,15 +1397,60 @@ module.exports = JSON.parse('{"compilerOptions":{"target":"es2015","module":"esn
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/sharing */
+/******/ 	(() => {
+/******/ 		__webpack_require__.S = {};
+/******/ 		var initPromises = {};
+/******/ 		var initTokens = {};
+/******/ 		__webpack_require__.I = (name, initScope) => {
+/******/ 			if(!initScope) initScope = [];
+/******/ 			// handling circular init calls
+/******/ 			var initToken = initTokens[name];
+/******/ 			if(!initToken) initToken = initTokens[name] = {};
+/******/ 			if(initScope.indexOf(initToken) >= 0) return;
+/******/ 			initScope.push(initToken);
+/******/ 			// only runs once
+/******/ 			if(initPromises[name]) return initPromises[name];
+/******/ 			// creates a new share scope if needed
+/******/ 			if(!__webpack_require__.o(__webpack_require__.S, name)) __webpack_require__.S[name] = {};
+/******/ 			// runs all init snippets from all modules reachable
+/******/ 			var scope = __webpack_require__.S[name];
+/******/ 			var warn = (msg) => (typeof console !== "undefined" && console.warn && console.warn(msg));
+/******/ 			var uniqueName = undefined;
+/******/ 			var register = (name, version, factory, eager) => {
+/******/ 				var versions = scope[name] = scope[name] || {};
+/******/ 				var activeVersion = versions[version];
+/******/ 				if(!activeVersion || (!activeVersion.loaded && (!eager != !activeVersion.eager ? eager : uniqueName > activeVersion.from))) versions[version] = { get: factory, from: uniqueName, eager: !!eager };
+/******/ 			};
+/******/ 			var initExternal = (id) => {
+/******/ 				var handleError = (err) => (warn("Initialization of sharing external failed: " + err));
+/******/ 				try {
+/******/ 					var module = __webpack_require__(id);
+/******/ 					if(!module) return;
+/******/ 					var initFn = (module) => (module && module.init && module.init(__webpack_require__.S[name], initScope))
+/******/ 					if(module.then) return promises.push(module.then(initFn, handleError));
+/******/ 					var initResult = initFn(module);
+/******/ 					if(initResult && initResult.then) return promises.push(initResult['catch'](handleError));
+/******/ 				} catch(err) { handleError(err); }
+/******/ 			}
+/******/ 			var promises = [];
+/******/ 			switch(name) {
+/******/ 			}
+/******/ 			if(!promises.length) return initPromises[name] = 1;
+/******/ 			return initPromises[name] = Promise.all(promises).then(() => (initPromises[name] = 1));
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 /******/ 	
+/******/ 	// module cache are used so entry inlining is disabled
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
-/******/ 	// This entry module is referenced by other modules so it can't be inlined
-/******/ 	var __webpack_exports__ = __webpack_require__("./build.definitions/application-index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__(9568);
+/******/ 	var __webpack_export_target__ = exports;
+/******/ 	for(var i in __webpack_exports__) __webpack_export_target__[i] = __webpack_exports__[i];
+/******/ 	if(__webpack_exports__.__esModule) Object.defineProperty(__webpack_export_target__, "__esModule", { value: true });
 /******/ 	
-/******/ 	return __webpack_exports__;
 /******/ })()
 ;
-});
 //# sourceMappingURL=bundle.js.map

@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToWork_Request_Details"
+	},
+	"PageToOpen": "/MDK_WorkOrderOutage/Pages/Work_Request_Details.page"
+}

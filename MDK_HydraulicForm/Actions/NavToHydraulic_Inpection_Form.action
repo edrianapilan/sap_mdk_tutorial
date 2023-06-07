@@ -1,0 +1,8 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToHydraulic_Inpection_Form"
+	},
+	"PageToOpen": "/MDK_HydraulicForm/Pages/Hydraulic_Inspection_Form.page",
+	"ModalPage": true
+}

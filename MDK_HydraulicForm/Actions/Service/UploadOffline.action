@@ -1,0 +1,9 @@
+{
+    "Service": "/MDK_HydraulicForm/Services/SampleServiceV2.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/MDK_HydraulicForm/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/MDK_HydraulicForm/Actions/Service/SyncFailureMessage.action"
+}

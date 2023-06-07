@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/MDK_WorkOrderOutage/Rules/AppUpdateFailure.js",
+    "OnSuccess": "/MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js"
+}

@@ -11,20 +11,20 @@
 return /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./build.definitions/DemoSampleApp/i18n/i18n.properties":
-/*!**************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/i18n/i18n.properties ***!
-  \**************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/i18n/i18n.properties":
+/*!********************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/i18n/i18n.properties ***!
+  \********************************************************************/
 /***/ ((module) => {
 
 module.exports = ""
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js":
-/*!*******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js ***!
-  \*******************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateFailure.js":
+/*!*************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateFailure.js ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -70,7 +70,7 @@ function AppUpdateFailure(clientAPI) {
       break;
   }
   return clientAPI.getPageProxy().executeAction({
-    "Name": "/DemoSampleApp/Actions/AppUpdateFailureMessage.action",
+    "Name": "/MDK_WorkOrderOutage/Actions/AppUpdateFailureMessage.action",
     "Properties": {
       "Duration": 0,
       "Message": message
@@ -80,10 +80,10 @@ function AppUpdateFailure(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js":
-/*!*******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js ***!
-  \*******************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js":
+/*!*************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -111,7 +111,7 @@ function AppUpdateSuccess(clientAPI) {
     let versionNum = result.split(': ')[1];
     if (result.startsWith('Current version is already up to date')) {
       return clientAPI.getPageProxy().executeAction({
-        "Name": "/DemoSampleApp/Actions/AppUpdateSuccessMessage.action",
+        "Name": "/MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action",
         "Properties": {
           "Message": `You are already using the latest version: ${versionNum}`,
           "NumberOfLines": 2
@@ -120,7 +120,7 @@ function AppUpdateSuccess(clientAPI) {
     } else if (result === 'AppUpdate feature is not enabled or no new revision found.') {
       message = 'No Application metadata found. Please deploy your application and try again.';
       return clientAPI.getPageProxy().executeAction({
-        "Name": "/DemoSampleApp/Actions/AppUpdateSuccessMessage.action",
+        "Name": "/MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action",
         "Properties": {
           "Duration": 5,
           "Message": message,
@@ -133,91 +133,10 @@ function AppUpdateSuccess(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js":
-/*!*******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js ***!
-  \*******************************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Customers_DeleteConfirmation)
-/* harmony export */ });
-/**
- * Describe this function...
- * @param {IClientAPI} clientAPI
- */
-function Customers_DeleteConfirmation(context) {
-  return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteConfirmation.action').then(result => {
-    if (result.data) {
-      return context.executeAction('/DemoSampleApp/Actions/Customers_DeleteEntity.action').then(success => Promise.resolve(success), failure => Promise.reject('Delete entity failed ' + failure));
-    } else {
-      return Promise.reject('User Deferred');
-    }
-  });
-}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js":
-/*!***********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ CustomerOrderCount)
-/* harmony export */ });
-/**
- * Describe this function...
- * @param {IClientAPI} clientAPI
- */
-function CustomerOrderCount(context) {
-  //The following currentCustomer will retrieve the current customer record
-  const currentCustomer = context.getPageProxy().binding.CustomerId;
-  //The following expression will retrieve the total count of the orders for a given customer
-  return context.count('/DemoSampleApp/Services/SampleServiceV2.service', 'SalesOrderHeaders', `$filter=CustomerId eq '${currentCustomer}'`).then(count => {
-    return count;
-  });
-}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Rules/EmailValidation.js":
-/*!******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/EmailValidation.js ***!
-  \******************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ EmailValidation)
-/* harmony export */ });
-/**
- * Describe this function...
- * @param {IClientAPI} clientAPI
- */
-function EmailValidation(context) {
-  //The following evaluateTargetPath will retrieve the current value of the email control
-  if (context.evaluateTargetPath('#Control:FCEmail/#Value').indexOf('@') === -1) {
-    //If email value does not contain @ display a validation failure message to the end-user
-    context.executeAction('/DemoSampleApp/Actions/ValidationFailure.action');
-  } else {
-    //If @ is present in the email value, return true to indicate validation is successful
-    return true;
-  }
-}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js":
-/*!**********************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js ***!
-  \**********************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js":
+/*!****************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js ***!
+  \****************************************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -230,9 +149,9 @@ __webpack_require__.r(__webpack_exports__);
  * @param {IClientAPI} context
  */
 function CheckForSyncError(context) {
-  context.count('/DemoSampleApp/Services/SampleServiceV2.service', 'ErrorArchive', '').then(errorCount => {
+  context.count('/MDK_WorkOrderOutage/Services/SampleServiceV2.service', 'ErrorArchive', '').then(errorCount => {
     if (errorCount > 0) {
-      return context.getPageProxy().executeAction('/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action').then(function () {
+      return context.getPageProxy().executeAction('/MDK_WorkOrderOutage/Actions/ErrorArchive/ErrorArchive_SyncFailure.action').then(function () {
         return Promise.reject(false);
       });
     }
@@ -241,10 +160,10 @@ function CheckForSyncError(context) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js":
-/*!***************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js ***!
-  \***************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/OnWillUpdate.js":
+/*!*********************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/OnWillUpdate.js ***!
+  \*********************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -257,9 +176,9 @@ __webpack_require__.r(__webpack_exports__);
  * @param {IClientAPI} clientAPI
  */
 function OnWillUpdate(clientAPI) {
-  return clientAPI.executeAction('/DemoSampleApp/Actions/OnWillUpdate.action').then(result => {
+  return clientAPI.executeAction('/MDK_WorkOrderOutage/Actions/OnWillUpdate.action').then(result => {
     if (result.data) {
-      return clientAPI.executeAction('/DemoSampleApp/Actions/Service/CloseOffline.action').then(success => Promise.resolve(success), failure => Promise.reject('Offline Odata Close Failed ' + failure));
+      return clientAPI.executeAction('/MDK_WorkOrderOutage/Actions/Service/CloseOffline.action').then(success => Promise.resolve(success), failure => Promise.reject('Offline Odata Close Failed ' + failure));
     } else {
       return Promise.reject('User Deferred');
     }
@@ -268,10 +187,29 @@ function OnWillUpdate(clientAPI) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/OpenWorkCofirmation.js":
 /*!****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/OpenWorkCofirmation.js ***!
   \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OpenWorkCofirmation)
+/* harmony export */ });
+function OpenWorkCofirmation(context) {
+  var wrStatusVal = context.evaluateTargetPath('#Page:Work_Request_Details/#Control:FCWRStatus/#SelectedValue');
+  console.log(wrStatusVal);
+  if (wrStatusVal == "") {}
+}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Rules/ResetAppSettingsAndLogout.js":
+/*!**********************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Rules/ResetAppSettingsAndLogout.js ***!
+  \**********************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -300,16 +238,16 @@ function ResetAppSettingsAndLogout(context) {
     logger.log(`ERROR: AppSettings cleanup failure - ${err}`, 'ERROR');
   } finally {
     // Logout 
-    return context.getPageProxy().executeAction('/DemoSampleApp/Actions/Logout.action');
+    return context.getPageProxy().executeAction('/MDK_WorkOrderOutage/Actions/Logout.action');
   }
 }
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.css":
-/*!***********************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.css ***!
-  \***********************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.css":
+/*!*****************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Styles/Styles.css ***!
+  \*****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
@@ -317,17 +255,17 @@ var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n", "",{"version":3,"sources":["webpack://./build.definitions/DemoSampleApp/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n", "",{"version":3,"sources":["webpack://./build.definitions/MDK_WorkOrderOutage/Styles/Styles.css"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\ndiv.MDKPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/\n"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.less":
-/*!************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.less ***!
-  \************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.less":
+/*!******************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Styles/Styles.less ***!
+  \******************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
@@ -335,17 +273,17 @@ var ___CSS_LOADER_API_SOURCEMAP_IMPORT___ = __webpack_require__(/*! ../../../../
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js */ "../../extbin/local/openvscode-server/extensions/mdk-vsc-wing-23.5.0/node_modules/css-loader/dist/runtime/api.js");
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(___CSS_LOADER_API_SOURCEMAP_IMPORT___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/", "",{"version":3,"sources":["webpack://./build.definitions/DemoSampleApp/Styles/Styles.less"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/", "",{"version":3,"sources":["webpack://./build.definitions/MDK_WorkOrderOutage/Styles/Styles.less"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;;;CAoBC","sourcesContent":["/* The LESS stylesheet provides the ability to define styling styles that can be used to style the UI in the MDK app.\n\nExamples:\n\n@mdkYellow1: #ffbb33;\n@mdkRed1: #ff0000;\n\n//// By-Type style: All Pages in the application will now have a yellow background\nPage\n\n{ background-color: @mdkYellow1; }\n//// By-Name style: All Buttons with _Name == \"BlueButton\" will now have this style\n#BlueButton\n\n{ color: @mdkYellow1; background-color: #0000FF; }\n//// By-Class style: These style classes can be referenced from rules and set using ClientAPI setStyle function\n\n.MyButton\n\n{ color: @mdkYellow1; background-color: @mdkRed1; }\n*/"],"sourceRoot":""}]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.nss":
-/*!***********************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.nss ***!
-  \***********************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.nss":
+/*!*****************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Styles/Styles.nss ***!
+  \*****************************************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // Imports
@@ -478,103 +416,173 @@ module.exports = function cssWithMappingToString(item) {
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Create.page":
-/*!*********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Customers_Create.page ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":"FormCellContainer0","Sections":[{"Controls":[{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateFirstName","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"First Name","PlaceHolder":"Enter Value","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateLastName","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Last Name","PlaceHolder":"Enter Value","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreatePhone","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Phone","PlaceHolder":"Enter Value","KeyboardType":"Phone","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateEmail","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Email","PlaceHolder":"Enter Value","KeyboardType":"Email","Enabled":true},{"Value":"Enter Date","_Type":"Control.Type.FormCell.DatePicker","_Name":"FCCreateDOB","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"DOB","Mode":"Datetime"},{"Value":false,"_Type":"Control.Type.FormCell.Switch","_Name":"FormCellSwitch0","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Caption"},{"Value":["Two"],"_Type":"Control.Type.FormCell.ListPicker","_Name":"FormCellListPicker0","IsEditable":true,"IsVisible":true,"Separator":true,"AllowMultipleSelection":false,"AllowEmptySelection":true,"Caption":"Choose Single","DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"PickerPrompt":"Please select one single item","IsSelectedSectionEnabled":false,"IsPickerDismissedOnSelection":false,"IsSearchCancelledAfterSelection":false,"AllowDefaultValueIfOneItem":false,"PickerItems":["One","Two","Three"]}],"Visible":true}]}],"_Type":"Page","_Name":"Customers_Create","Caption":"Create Customer","ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Cancel","Position":"Left","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/CloseModalPage_Cancel.action"},{"_Name":"ActionBarItem1","Caption":"Item","SystemItem":"Save","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/Customers_CreateEntity.action"}],"_Name":"ActionBar1"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Detail.page":
-/*!*********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Customers_Detail.page ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"ObjectHeader":{"Subhead":"{FirstName}","Footnote":"{EmailAddress}","Description":"{CustomerId}","StatusText":"{PhoneNumber}","DetailImage":"sap-icon://customer","DetailImageIsCircular":false,"BodyText":"{DateOfBirth}","HeadlineText":"{LastName}","StatusPosition":"Stacked","StatusImagePosition":"Leading","SubstatusImagePosition":"Leading"},"_Type":"Section.Type.ObjectHeader","_Name":"SectionObjectHeader0","Visible":true},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true},"KeyAndValues":[{"Value":"{HouseNumber} {Street}","_Name":"KeyValue0","KeyName":"Address","Visible":true},{"Value":"{City}","_Name":"KeyValue1","KeyName":"City","Visible":true},{"Value":"{PostalCode}","_Name":"KeyValue2","KeyName":"Postal Code","Visible":true},{"Value":"{Country}","_Name":"KeyValue3","KeyName":"Country","Visible":true}],"MaxItemCount":1,"_Type":"Section.Type.KeyValue","_Name":"SectionKeyValue0","Visible":true,"EmptySection":{"FooterVisible":false},"Layout":{"NumberOfColumns":2}},{"Header":{"_Name":"SectionHeader0","AccessoryType":"none","UseTopPadding":true,"Caption":"Customer Orders"},"Footer":{"_Name":"SectionFooter0","Caption":"See All","AttributeLabel":"/DemoSampleApp/Rules/Customers_OrderCount.js","AccessoryType":"disclosureIndicator","FooterStyle":"attribute","Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Orders.action","UseBottomPadding":false},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"_Type":"Section.Type.ObjectTable","DataSubscriptions":["SalesOrderHeaders"],"Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"{@odata.readLink}/SalesOrders","QueryOptions":"$top=5&$orderby=CreatedAt desc"},"_Name":"SectionObjectTable0","Visible":true,"EmptySection":{"Caption":"No Customer Orders Found","FooterVisible":false},"ObjectCell":{"ContextMenu":{"Items":[],"PerformFirstActionWithFullSwipe":true},"Title":"{SalesOrderId}","Subhead":"$(D,{CreatedAt},'','',{format:'medium'})","DisplayDescriptionInMobile":true,"StatusText":"$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})","SubstatusText":"{CurrencyCode}","PreserveIconStackSpacing":false,"AccessoryType":"disclosureIndicator","Tags":[],"AvatarStack":{"Avatars":[],"ImageIsCircular":true,"ImageHasBorder":false},"AvatarGrid":{"Avatars":[],"ImageIsCircular":true},"OnPress":"/DemoSampleApp/Actions/NavToSalesOrders_Details.action","Selected":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"HighlightSelectedItem":false,"Selection":{"ExitOnLastDeselect":true,"LongPressToEnable":"None","Mode":"None"}}]}],"DesignTimeTarget":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers"},"_Type":"Page","_Name":"Customers_Detail","Caption":"Details","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Edit","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Edit.action"},{"_Name":"ActionBarItem1","Caption":"Item","SystemItem":"Trash","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Rules/Customers_DeleteConfirmation.js"}],"_Name":"ActionBar1"},"ToolBar":{"Items":[{"_Type":"Control.Type.ToolbarItem","_Name":"ToolbarItem0","Caption":"Create Order","Enabled":true,"Visible":true,"Clickable":true,"Style":"","OnPress":"/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action"}]}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Edit.page":
-/*!*******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Customers_Edit.page ***!
-  \*******************************************************************/
-/***/ ((module) => {
-
-module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":"FormCellContainer0","Sections":[{"Controls":[{"Value":"{FirstName}","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCFirstName","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"First Name","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"{LastName}","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCLastName","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Last Name","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"{PhoneNumber}","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCPhone","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Phone","PlaceHolder":"PlaceHolder","KeyboardType":"Phone","Enabled":true},{"Value":"{EmailAddress}","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCEmail","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Email","PlaceHolder":"PlaceHolder","KeyboardType":"Email","Enabled":true}],"Visible":true}]}],"_Type":"Page","_Name":"Customers_Edit","Caption":"Update Customer","ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Cancel","Position":"Left","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/CloseModalPage_Cancel.action"},{"_Name":"ActionBarItem1","Caption":"Item","SystemItem":"Save","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/Customers_UpdateEntity.action"}],"_Name":"ActionBar1"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_List.page":
-/*!*******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Customers_List.page ***!
-  \*******************************************************************/
-/***/ ((module) => {
-
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"_Type":"Section.Type.ContactCell","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers","QueryOptions":"$orderby=LastName"},"_Name":"SectionContactCell0","Visible":true,"EmptySection":{"FooterVisible":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"ContactCell":{"ContextMenu":{"PerformFirstActionWithFullSwipe":true,"Items":[]},"DetailImage":"","Headline":"{LastName}","Subheadline":"{FirstName}","Description":"{City}","OnPress":"/DemoSampleApp/Actions/NavToCustomers_Detail.action","ActivityItems":[{"_Name":"SectionContactCell0ActivityItems0","ActivityType":"Phone","ActivityValue":"{PhoneNumber}"},{"_Name":"SectionContactCell0ActivityItems1","ActivityType":"Email","ActivityValue":"{EmailAddress}"}]},"Search":{"Enabled":true,"BarcodeScanner":true}}]}],"_Type":"Page","_Name":"Customers_List","Caption":"Customers","PrefersLargeCaption":true,"ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Add","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_Create.action"}],"_Name":"ActionBar1"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Pages/Customers_Orders.page":
-/*!*********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Customers_Orders.page ***!
-  \*********************************************************************/
-/***/ ((module) => {
-
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.ObjectTable","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"SalesOrderHeaders","QueryOptions":"$filter=CustomerId eq '{CustomerId}'&$orderby=CreatedAt desc"},"_Name":"SectionObjectTable0","Visible":true,"EmptySection":{"Caption":"No Orders Found","FooterVisible":false},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"ObjectCell":{"Title":"{SalesOrderId}","Subhead":"{CustomerId}","Description":"$(D,{CreatedAt},'','',{format:'medium'})","DisplayDescriptionInMobile":true,"StatusText":"$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})","SubstatusText":"{LifeCycleStatusName}","PreserveIconStackSpacing":false,"AccessoryType":"disclosureIndicator","Tags":[],"AvatarStack":{"Avatars":[],"ImageIsCircular":true,"ImageHasBorder":false},"AvatarGrid":{"Avatars":[],"ImageIsCircular":true},"OnPress":"/DemoSampleApp/Actions/NavToSalesOrders_Details.action","Selected":false,"ContextMenu":{"Items":[],"PerformFirstActionWithFullSwipe":true}},"Search":{"Enabled":true,"BarcodeScanner":true},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"HighlightSelectedItem":false,"Selection":{"ExitOnLastDeselect":true,"LongPressToEnable":"None","Mode":"None"}}]}],"_Type":"Page","_Name":"Customers_Orders","Caption":"Customer Orders","PrefersLargeCaption":true}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_Detail.page":
 /*!*************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_Detail.page ***!
   \*************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"Customer Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"Customers","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"","HeadlineText":"{FirstName}","Subhead":"{City}","BodyText":"","Footnote":"{CustomerId}","Description":"{Country}","StatusText":"{DateOfBirth}","StatusImage":"","SubstatusImage":"","SubstatusText":"{EmailAddress}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"City","Value":"{City}"},{"KeyName":"Country","Value":"{Country}"},{"KeyName":"CustomerId","Value":"{CustomerId}"},{"KeyName":"DateOfBirth","Value":"{DateOfBirth}"},{"KeyName":"EmailAddress","Value":"{EmailAddress}"},{"KeyName":"FirstName","Value":"{FirstName}"},{"KeyName":"HouseNumber","Value":"{HouseNumber}"},{"KeyName":"LastName","Value":"{LastName}"},{"KeyName":"PhoneNumber","Value":"{PhoneNumber}"},{"KeyName":"PostalCode","Value":"{PostalCode}"},{"KeyName":"Street","Value":"{Street}"},{"KeyName":"UpdatedTimestamp","Value":"{UpdatedTimestamp}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"},{"Header":{"Caption":"Address"},"KeyAndValues":[{"KeyName":"HouseNumber","Value":"{Address/HouseNumber}"},{"KeyName":"Street","Value":"{Address/Street}"},{"KeyName":"City","Value":"{Address/City}"},{"KeyName":"Country","Value":"{Address/Country}"},{"KeyName":"PostalCode","Value":"{Address/PostalCode}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValueAddress","_Type":"Section.Type.KeyValue"},{"Header":{"Caption":"SalesOrders"},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{CurrencyCode}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"StatusImage":"","Title":"{LifeCycleStatusName}","Footnote":"{CustomerId}","PreserveIconStackSpacing":false,"StatusText":"{GrossAmount}","Subhead":"{CreatedAt}","SubstatusText":"{LifeCycleStatus}","OnPress":"/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action"},"EmptySection":{"Caption":"No record found!"},"Target":{"EntitySet":"{@odata.readLink}/SalesOrders","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service"},"_Type":"Section.Type.ObjectTable"}],"DataSubscriptions":["SalesOrderHeaders"],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"Customers_Detail","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_List.page":
+/*!***********************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_List.page ***!
+  \***********************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"Customers","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{Country}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_Detail.action","StatusImage":"","Title":"{FirstName}","Footnote":"{CustomerId}","PreserveIconStackSpacing":false,"StatusText":"{DateOfBirth}","Subhead":"{City}","SubstatusText":"{EmailAddress}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"Customers","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"Customers_List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_Detail.page":
+/*!*******************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_Detail.page ***!
+  \*******************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable","Sections":[{"KeyAndValues":[{"Value":"{Message}","_Name":"KeyValue0","KeyName":"Error","Visible":true},{"Value":"{RequestBody}","_Name":"KeyValue1","KeyName":"Request Body","Visible":true},{"Value":"{RequestURL}","_Name":"KeyValue2","KeyName":"Request URL","Visible":true},{"Value":"{HTTPStatusCode}","_Name":"KeyValue3","KeyName":"HTTP Status Code","Visible":true},{"Value":"{RequestMethod}","_Name":"KeyValue4","KeyName":"Request Method","Visible":true}],"MaxItemCount":1,"_Type":"Section.Type.KeyValue","_Name":"SectionKeyValue0","Visible":true,"EmptySection":{"FooterVisible":false},"Layout":{"NumberOfColumns":1}}]}],"_Type":"Page","_Name":"ErrorArchive_Detail","Caption":"Details","PrefersLargeCaption":true}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_List.page":
+/*!*****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_List.page ***!
+  \*****************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.ObjectTable","Target":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"ErrorArchive"},"_Name":"SectionObjectTable0","Visible":true,"EmptySection":{"FooterVisible":false,"Caption":"No record found!"},"ObjectCell":{"ContextMenu":{"Items":[],"PerformFirstActionWithFullSwipe":true},"Title":"{HTTPStatusCode}","Subhead":"{RequestURL}","Footnote":"{Message}","StatusText":"{RequestMethod}","AvatarStack":{"ImageIsCircular":false},"PreserveIconStackSpacing":false,"AccessoryType":"none","OnPress":"/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_Detail.action","Selected":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"HighlightSelectedItem":false,"Selection":{"ExitOnLastDeselect":true,"LongPressToEnable":"None","Mode":"None"}}]}],"_Type":"Page","_Name":"ErrorArchive_List","Caption":"Error List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Main.page":
+/*!***************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Main.page ***!
+  \***************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.ButtonTable","_Name":"SectionButtonTable0","EmptySection":{"FooterVisible":false},"Buttons":[{"_Name":"SectionButton0","Title":"Work Request Details","Alignment":"Center","ButtonType":"Text","Semantic":"Tint","ImagePosition":"Leading","FullWidth":false,"Visible":true,"OnPress":"/MDK_WorkOrderOutage/Actions/NavToWork_Request_Details.action"}],"Layout":{"LayoutType":"Vertical","HorizontalAlignment":"Leading"}}]}],"_Type":"Page","_Name":"Main","Caption":"Main","PrefersLargeCaption":true,"ToolBar":{"Items":[{"_Type":"Control.Type.ToolbarItem","_Name":"LogoutToolbarItem","Caption":"Logout","Enabled":true,"Visible":true,"Clickable":true,"OnPress":"/MDK_WorkOrderOutage/Actions/LogoutMessage.action"},{"_Type":"Control.Type.ToolbarItem","_Name":"UploadToolbarItem","Caption":"Sync","Enabled":true,"Visible":"$(PLT,true,true,false)","Clickable":true,"OnPress":"/MDK_WorkOrderOutage/Actions/Service/SyncStartedMessage.action"},{"_Type":"Control.Type.ToolbarItem","_Name":"UpdateToolbarItem","Caption":"Update","Enabled":true,"Visible":"$(PLT,true,true,false)","Clickable":true,"OnPress":"/MDK_WorkOrderOutage/Actions/AppUpdateProgressBanner.action"}]}}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_Detail.page":
 /*!***********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_Detail.page ***!
   \***********************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.ObjectTable","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"ErrorArchive"},"_Name":"SectionObjectTable0","Visible":true,"EmptySection":{"FooterVisible":false,"Caption":"No record found!"},"ObjectCell":{"ContextMenu":{"Items":[],"PerformFirstActionWithFullSwipe":true},"Title":"{HTTPStatusCode}","Subhead":"{RequestURL}","Footnote":"{Message}","StatusText":"{RequestMethod}","AvatarStack":{"ImageIsCircular":false},"PreserveIconStackSpacing":false,"AccessoryType":"none","OnPress":"/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action","Selected":false},"DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"HighlightSelectedItem":false,"Selection":{"ExitOnLastDeselect":true,"LongPressToEnable":"None","Mode":"None"}}]}],"_Type":"Page","_Name":"ErrorArchive_List","Caption":"Error List","PrefersLargeCaption":true}
+module.exports = {"Caption":"Product Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"Products","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service/{@odata.readLink}/$value","HeadlineText":"{Name}","Subhead":"{Category}","BodyText":"","Footnote":"{CurrencyCode}","Description":"{CategoryName}","StatusText":"{DimensionDepth}","StatusImage":"","SubstatusImage":"","SubstatusText":"{DimensionHeight}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"Category","Value":"{Category}"},{"KeyName":"CategoryName","Value":"{CategoryName}"},{"KeyName":"CurrencyCode","Value":"{CurrencyCode}"},{"KeyName":"DimensionDepth","Value":"{DimensionDepth}"},{"KeyName":"DimensionHeight","Value":"{DimensionHeight}"},{"KeyName":"DimensionUnit","Value":"{DimensionUnit}"},{"KeyName":"DimensionWidth","Value":"{DimensionWidth}"},{"KeyName":"LongDescription","Value":"{LongDescription}"},{"KeyName":"Name","Value":"{Name}"},{"KeyName":"PictureUrl","Value":"{PictureUrl}"},{"KeyName":"Price","Value":"{Price}"},{"KeyName":"ProductId","Value":"{ProductId}"},{"KeyName":"QuantityUnit","Value":"{QuantityUnit}"},{"KeyName":"ShortDescription","Value":"{ShortDescription}"},{"KeyName":"SupplierId","Value":"{SupplierId}"},{"KeyName":"UpdatedTimestamp","Value":"{UpdatedTimestamp}"},{"KeyName":"Weight","Value":"{Weight}"},{"KeyName":"WeightUnit","Value":"{WeightUnit}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"}],"DataSubscriptions":[],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"Products_Detail","PrefersLargeCaption":true}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/Main.page":
-/*!*********************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/Main.page ***!
-  \*********************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_List.page":
+/*!*********************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_List.page ***!
+  \*********************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Layout":{"LayoutType":"Vertical","HorizontalAlignment":"Leading"},"_Type":"Section.Type.ButtonTable","_Name":"SectionButtonTable0","Visible":true,"EmptySection":{"FooterVisible":false},"Buttons":[{"_Name":"SectionButton0","Title":"Customers","Alignment":"Center","ButtonType":"Text","Semantic":"Tint","Image":"sap-icon://customer","ImagePosition":"Leading","FullWidth":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/NavToCustomers_List.action"}]}]}],"_Type":"Page","_Name":"Main","Caption":"Main","PrefersLargeCaption":true,"ToolBar":{"Items":[{"_Type":"Control.Type.ToolbarItem","_Name":"LogoutToolbarItem","Caption":"Logout","Enabled":true,"Visible":true,"Clickable":true,"OnPress":"/DemoSampleApp/Actions/LogoutMessage.action"},{"_Type":"Control.Type.ToolbarItem","_Name":"UploadToolbarItem","Caption":"Sync","Enabled":true,"Visible":"$(PLT,true,true,false)","Clickable":true,"OnPress":"/DemoSampleApp/Actions/Service/SyncStartedMessage.action"},{"_Type":"Control.Type.ToolbarItem","_Name":"UpdateToolbarItem","Caption":"Update","Enabled":true,"Visible":"$(PLT,true,true,false)","Clickable":true,"OnPress":"/DemoSampleApp/Actions/AppUpdateProgressBanner.action"},{"_Type":"Control.Type.ToolbarItem","_Name":"ToolbarItem0","Caption":"Upload Logs","Enabled":true,"Visible":"$(PLT,true,true,false)","Clickable":true,"Style":"","OnPress":"/DemoSampleApp/Actions/LogUpload.action"}]}}
+module.exports = {"Caption":"Products","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{CategoryName}","AvatarStack":{"Avatars":[{"Image":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service/{@odata.readLink}/$value"}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/Products/NavToProducts_Detail.action","StatusImage":"","Title":"{Name}","Footnote":"{CurrencyCode}","PreserveIconStackSpacing":false,"StatusText":"{DimensionDepth}","Subhead":"{Category}","SubstatusText":"{DimensionHeight}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"Products","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"Products_List","PrefersLargeCaption":true}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page":
-/*!*****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page ***!
-  \*****************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_Detail.page":
+/*!***********************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_Detail.page ***!
+  \***********************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.FormCellContainer","_Name":"FormCellContainer0","Sections":[{"Controls":[{"Value":"EUR","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateCurrencyCode","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Currency Code","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"18.010","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateNetAmount","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Net Amount","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"108.010","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateTaxAmount","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Tax Amount","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"126.02","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateGrossAmount","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Gross Amount","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"N","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateLifeCycleStatus","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Lifecycle Status","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"New","_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FCCreateLifeCycleStatusName","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Lifecycle Status Name","PlaceHolder":"PlaceHolder","Enabled":true},{"Value":"Enter Date","_Type":"Control.Type.FormCell.DatePicker","_Name":"FCCreatedate","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Creation Date","Mode":"Datetime"}],"Visible":true}],"LoadingIndicator":{"Enabled":false,"Text":""}}],"_Type":"Page","_Name":"SalesOrderHeaders_Create","Caption":"Create Order","ActionBar":{"Items":[{"_Name":"ActionBarItem0","Caption":"Item","SystemItem":"Cancel","Position":"Left","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/CloseModalPage_Cancel.action"},{"_Name":"ActionBarItem1","Caption":"Item","SystemItem":"Save","Position":"Right","IsIconCircular":false,"Visible":true,"OnPress":"/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action"}],"_Name":"ActionBar1"}}
+module.exports = {"Caption":"PurchaseOrderHeader Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"PurchaseOrderHeaders","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"","HeadlineText":"{PurchaseOrderId}","Subhead":"{CurrencyCode}","BodyText":"","Footnote":"{NetAmount}","Description":"{GrossAmount}","StatusText":"{SupplierId}","StatusImage":"","SubstatusImage":"","SubstatusText":"{TaxAmount}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"CurrencyCode","Value":"{CurrencyCode}"},{"KeyName":"GrossAmount","Value":"{GrossAmount}"},{"KeyName":"NetAmount","Value":"{NetAmount}"},{"KeyName":"PurchaseOrderId","Value":"{PurchaseOrderId}"},{"KeyName":"SupplierId","Value":"{SupplierId}"},{"KeyName":"TaxAmount","Value":"{TaxAmount}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"},{"Header":{"Caption":"Items"},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{GrossAmount}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"StatusImage":"","Title":"{ProductId}","Footnote":"{ItemNumber}","PreserveIconStackSpacing":false,"StatusText":"{NetAmount}","Subhead":"{CurrencyCode}","SubstatusText":"{PurchaseOrderId}","OnPress":"/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action"},"EmptySection":{"Caption":"No record found!"},"Target":{"EntitySet":"{@odata.readLink}/Items","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service"},"_Type":"Section.Type.ObjectTable"}],"DataSubscriptions":["PurchaseOrderItems"],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"PurchaseOrderHeaders_Detail","PrefersLargeCaption":true}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page":
-/*!************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page ***!
-  \************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_List.page":
+/*!*********************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_List.page ***!
+  \*********************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"_Type":"Section.Type.KeyValue","_Name":"SectionKeyValue0","Visible":true,"EmptySection":{"FooterVisible":false},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true},"KeyAndValues":[{"Value":"{SalesOrderId}","_Name":"KeyValue0","KeyName":"Order Number","Visible":true},{"Value":"{LifeCycleStatusName}","_Name":"KeyValue1","KeyName":"Status","Visible":true},{"Value":"$(D,{CreatedAt},'','',{format:'medium'})","_Name":"KeyValue2","KeyName":"Created At","Visible":true},{"Value":"$(C,{NetAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})","_Name":"KeyValue3","KeyName":"Net Amount","Visible":true},{"Value":"$(C,{TaxAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})","_Name":"KeyValue4","KeyName":"Tax Amount","Visible":true},{"Value":"$(C,{GrossAmount},{CurrencyCode},'',{maximumFractionDigits:2,useGrouping:true})","_Name":"KeyValue5","KeyName":"Total Amount","Visible":true}],"MaxItemCount":1,"Layout":{"NumberOfColumns":2}}]}],"_Type":"Page","_Name":"SalesOrders_Details","Caption":"Order Details","PrefersLargeCaption":true,"DesignTimeTarget":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"SalesOrderHeaders"}}
+module.exports = {"Caption":"PurchaseOrderHeaders","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{GrossAmount}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Detail.action","StatusImage":"","Title":"{PurchaseOrderId}","Footnote":"{NetAmount}","PreserveIconStackSpacing":false,"StatusText":"{SupplierId}","Subhead":"{CurrencyCode}","SubstatusText":"{TaxAmount}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"PurchaseOrderHeaders","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"PurchaseOrderHeaders_List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_Detail.page":
+/*!*******************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_Detail.page ***!
+  \*******************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"PurchaseOrderItem Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"PurchaseOrderItems","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"","HeadlineText":"{ProductId}","Subhead":"{CurrencyCode}","BodyText":"","Footnote":"{ItemNumber}","Description":"{GrossAmount}","StatusText":"{NetAmount}","StatusImage":"","SubstatusImage":"","SubstatusText":"{PurchaseOrderId}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"CurrencyCode","Value":"{CurrencyCode}"},{"KeyName":"GrossAmount","Value":"{GrossAmount}"},{"KeyName":"ItemNumber","Value":"{ItemNumber}"},{"KeyName":"NetAmount","Value":"{NetAmount}"},{"KeyName":"ProductId","Value":"{ProductId}"},{"KeyName":"PurchaseOrderId","Value":"{PurchaseOrderId}"},{"KeyName":"Quantity","Value":"{Quantity}"},{"KeyName":"QuantityUnit","Value":"{QuantityUnit}"},{"KeyName":"TaxAmount","Value":"{TaxAmount}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"}],"DataSubscriptions":[],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"PurchaseOrderItems_Detail","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_List.page":
+/*!*****************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_List.page ***!
+  \*****************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"PurchaseOrderItems","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{GrossAmount}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action","StatusImage":"","Title":"{ProductId}","Footnote":"{ItemNumber}","PreserveIconStackSpacing":false,"StatusText":"{NetAmount}","Subhead":"{CurrencyCode}","SubstatusText":"{PurchaseOrderId}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"PurchaseOrderItems","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"PurchaseOrderItems_List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_Detail.page":
+/*!*****************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_Detail.page ***!
+  \*****************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"SalesOrderHeader Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"SalesOrderHeaders","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"","HeadlineText":"{LifeCycleStatusName}","Subhead":"{CreatedAt}","BodyText":"","Footnote":"{CustomerId}","Description":"{CurrencyCode}","StatusText":"{GrossAmount}","StatusImage":"","SubstatusImage":"","SubstatusText":"{LifeCycleStatus}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"CreatedAt","Value":"{CreatedAt}"},{"KeyName":"CurrencyCode","Value":"{CurrencyCode}"},{"KeyName":"CustomerId","Value":"{CustomerId}"},{"KeyName":"GrossAmount","Value":"{GrossAmount}"},{"KeyName":"LifeCycleStatus","Value":"{LifeCycleStatus}"},{"KeyName":"LifeCycleStatusName","Value":"{LifeCycleStatusName}"},{"KeyName":"NetAmount","Value":"{NetAmount}"},{"KeyName":"SalesOrderId","Value":"{SalesOrderId}"},{"KeyName":"TaxAmount","Value":"{TaxAmount}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"},{"Header":{"Caption":"Items"},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{DeliveryDate}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"StatusImage":"","Title":"{ProductId}","Footnote":"{GrossAmount}","PreserveIconStackSpacing":false,"StatusText":"{ItemNumber}","Subhead":"{CurrencyCode}","SubstatusText":"{NetAmount}","OnPress":"/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action"},"EmptySection":{"Caption":"No record found!"},"Target":{"EntitySet":"{@odata.readLink}/Items","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service"},"_Type":"Section.Type.ObjectTable"}],"DataSubscriptions":["SalesOrderItems"],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"SalesOrderHeaders_Detail","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_List.page":
+/*!***************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_List.page ***!
+  \***************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"SalesOrderHeaders","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{CurrencyCode}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action","StatusImage":"","Title":"{LifeCycleStatusName}","Footnote":"{CustomerId}","PreserveIconStackSpacing":false,"StatusText":"{GrossAmount}","Subhead":"{CreatedAt}","SubstatusText":"{LifeCycleStatus}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"SalesOrderHeaders","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"SalesOrderHeaders_List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_Detail.page":
+/*!*************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_Detail.page ***!
+  \*************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"SalesOrderItem Detail","DesignTimeTarget":{"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","EntitySet":"SalesOrderItems","QueryOptions":""},"ActionBar":{"Items":[]},"Controls":[{"Sections":[{"ObjectHeader":{"Tags":[],"DetailImage":"","HeadlineText":"{ProductId}","Subhead":"{CurrencyCode}","BodyText":"","Footnote":"{GrossAmount}","Description":"{DeliveryDate}","StatusText":"{ItemNumber}","StatusImage":"","SubstatusImage":"","SubstatusText":"{NetAmount}"},"_Type":"Section.Type.ObjectHeader"},{"KeyAndValues":[{"KeyName":"CurrencyCode","Value":"{CurrencyCode}"},{"KeyName":"DeliveryDate","Value":"{DeliveryDate}"},{"KeyName":"GrossAmount","Value":"{GrossAmount}"},{"KeyName":"ItemNumber","Value":"{ItemNumber}"},{"KeyName":"NetAmount","Value":"{NetAmount}"},{"KeyName":"ProductId","Value":"{ProductId}"},{"KeyName":"Quantity","Value":"{Quantity}"},{"KeyName":"QuantityUnit","Value":"{QuantityUnit}"},{"KeyName":"SalesOrderId","Value":"{SalesOrderId}"},{"KeyName":"TaxAmount","Value":"{TaxAmount}"}],"Layout":{"NumberOfColumns":2},"MaxItemCount":1,"_Name":"SectionKeyValue0","_Type":"Section.Type.KeyValue"}],"DataSubscriptions":[],"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"SalesOrderItems_Detail","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_List.page":
+/*!***********************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_List.page ***!
+  \***********************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Caption":"SalesOrderItems","ActionBar":{"Items":[]},"Controls":[{"Sections":[{"Header":{"UseTopPadding":false},"ObjectCell":{"AccessoryType":"disclosureIndicator","Description":"{DeliveryDate}","AvatarStack":{"Avatars":[{"Image":""}],"ImageIsCircular":false},"Icons":[],"OnPress":"/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action","StatusImage":"","Title":"{ProductId}","Footnote":"{GrossAmount}","PreserveIconStackSpacing":false,"StatusText":"{ItemNumber}","Subhead":"{CurrencyCode}","SubstatusText":"{NetAmount}"},"EmptySection":{"Caption":"No record found!"},"Search":{"Enabled":true,"Placeholder":"Item Search","BarcodeScanner":true,"Delay":500,"MinimumCharacterThreshold":3},"DataPaging":{"ShowLoadingIndicator":true,"LoadingIndicatorText":"Loading more items, please wait..."},"Target":{"EntitySet":"SalesOrderItems","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","QueryOptions":""},"_Type":"Section.Type.ObjectTable"}],"LoadingIndicator":{"Enabled":true,"Text":"Loading, please wait..."},"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable"}],"_Type":"Page","_Name":"SalesOrderItems_List","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Work_Confirmation.page":
+/*!****************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Work_Confirmation.page ***!
+  \****************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Visible":true,"EmptySection":{"FooterVisible":false},"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell0","Controls":[{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty0","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Work Request Number","PlaceHolder":"PlaceHolder","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty1","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Work Request Type","PlaceHolder":"PlaceHolder","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty2","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Customers Out","PlaceHolder":"PlaceHolder","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty3","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Device","PlaceHolder":"PlaceHolder","Enabled":true},{"_Type":"Control.Type.FormCell.ListPicker","_Name":"FormCellListPicker0","IsEditable":true,"IsVisible":true,"Separator":true,"AllowMultipleSelection":true,"AllowEmptySelection":true,"Caption":"Phase(s)","DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"PickerPrompt":"Please select multiple items","IsSelectedSectionEnabled":false,"AllowDefaultValueIfOneItem":false,"PickerItems":["A","B","C"]},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty4","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Grid","PlaceHolder":"PlaceHolder","Enabled":true}]}]}],"_Type":"Page","_Name":"Work_Confirmation","Caption":"Work Confirmation","PrefersLargeCaption":true}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Pages/Work_Request_Details.page":
+/*!*******************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Pages/Work_Request_Details.page ***!
+  \*******************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"SectionedTable0","Sections":[{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty0","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Work Request Number","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty1","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Work Request Type","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty3","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Secondary Assignment","Enabled":true},{"Value":["Issued"],"_Type":"Control.Type.FormCell.ListPicker","_Name":"FCWRStatus","IsEditable":true,"IsVisible":true,"Separator":true,"AllowMultipleSelection":false,"AllowEmptySelection":true,"Caption":"WR Status","DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"PickerPrompt":"Please select one single item","OnValueChange":"/MDK_WorkOrderOutage/Rules/OpenWorkCofirmation.js","IsSelectedSectionEnabled":false,"IsPickerDismissedOnSelection":false,"IsSearchCancelledAfterSelection":false,"AllowDefaultValueIfOneItem":false,"PickerItems":["Issued","Completed"]},{"_Type":"Control.Type.FormCell.ListPicker","_Name":"FormCellListPicker0","IsEditable":true,"IsVisible":true,"Separator":true,"AllowMultipleSelection":false,"AllowEmptySelection":true,"Caption":"Construction Type","DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"IsSelectedSectionEnabled":false,"AllowDefaultValueIfOneItem":false,"PickerItems":["OH","OG"]},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty4","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Meter Number","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty5","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Device","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty6","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Grid","Enabled":true},{"_Type":"Control.Type.FormCell.ListPicker","_Name":"FormCellListPicker1","IsEditable":true,"IsVisible":true,"Separator":true,"AllowMultipleSelection":true,"AllowEmptySelection":true,"Caption":"Phase(s)","DataPaging":{"ShowLoadingIndicator":false,"PageSize":50},"IsSelectedSectionEnabled":false,"AllowDefaultValueIfOneItem":false,"PickerItems":["A","B","C"]},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty7","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Confirmed Open","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty8","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Priorty Score","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty9","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Customers Out","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty10","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Customers Assigned","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty11","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Special Condition","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty12","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Military","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty14","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Life Support","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty13","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Medical Certificates","Enabled":true}],"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell0"},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty15","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Customer","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty16","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Business","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty17","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Address","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty18","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Phone No.","Enabled":true},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty19","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"Alt Phone No.","Enabled":true}],"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell1"},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"Value":"Enter Date","_Type":"Control.Type.FormCell.DatePicker","_Name":"FormCellDatePicker0","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"ETR Range","Mode":"Datetime"},{"Value":"Enter Date","_Type":"Control.Type.FormCell.DatePicker","_Name":"FormCellDatePicker1","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"To","Mode":"Datetime"},{"_Type":"Control.Type.FormCell.SimpleProperty","_Name":"FormCellSimpleProperty20","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"ETR Updated By","Enabled":true},{"Value":"Enter Date","_Type":"Control.Type.FormCell.DatePicker","_Name":"FormCellDatePicker2","IsEditable":true,"IsVisible":true,"Separator":true,"Caption":"At","Mode":"Datetime"}],"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell2"},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"_Type":"Control.Type.FormCell.Note","_Name":"FormCellNote0","IsEditable":true,"IsVisible":true,"Separator":true,"Enabled":true}],"Header":{"_Name":"SectionHeader0","AccessoryType":"none","UseTopPadding":true,"Caption":"Work Description"},"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell3"},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"_Type":"Control.Type.FormCell.Note","_Name":"FormCellNote1","IsEditable":true,"IsVisible":true,"Separator":true,"Enabled":true}],"Header":{"_Name":"SectionHeader1","AccessoryType":"none","UseTopPadding":true,"Caption":"ROC Information"},"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell4"},{"Separators":{"TopSectionSeparator":false,"BottomSectionSeparator":true,"HeaderSeparator":true,"FooterSeparator":true,"ControlSeparator":true},"Controls":[{"_Type":"Control.Type.FormCell.Note","_Name":"FormCellNote2","IsEditable":true,"IsVisible":true,"Separator":true,"Enabled":true}],"Header":{"_Name":"SectionHeader2","AccessoryType":"none","UseTopPadding":true,"Caption":"Field Information"},"Visible":true,"EmptySection":{"FooterVisible":false},"_Type":"Section.Type.FormCell","_Name":"SectionFormCell5"}]}],"_Type":"Page","_Name":"Work_Request_Details","Caption":"Work Request Details","PrefersLargeCaption":true}
 
 /***/ }),
 
@@ -584,494 +592,404 @@ module.exports = {"Controls":[{"_Type":"Control.Type.SectionedTable","_Name":"Se
   \*******************************************/
 /***/ ((module) => {
 
-module.exports = {"_Name":"DemoSampleApp","Version":"/DemoSampleApp/Globals/AppDefinition_Version.global","MainPage":"/DemoSampleApp/Pages/Main.page","OnLaunch":["/DemoSampleApp/Actions/Service/InitializeOffline.action"],"OnWillUpdate":"/DemoSampleApp/Rules/OnWillUpdate.js","OnDidUpdate":"/DemoSampleApp/Actions/Service/InitializeOffline.action","Styles":"/DemoSampleApp/Styles/Styles.less","Localization":"/DemoSampleApp/i18n/i18n.properties","_SchemaVersion":"23.4","StyleSheets":{"Styles":{"css":"/DemoSampleApp/Styles/Styles.css","ios":"/DemoSampleApp/Styles/Styles.nss","android":"/DemoSampleApp/Styles/Styles.json"}}}
+module.exports = {"_Name":"MDK_WorkOrderOutage","Version":"/MDK_WorkOrderOutage/Globals/AppDefinition_Version.global","MainPage":"/MDK_WorkOrderOutage/Pages/Main.page","OnLaunch":["/MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action"],"OnWillUpdate":"/MDK_WorkOrderOutage/Rules/OnWillUpdate.js","OnDidUpdate":"/MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action","Styles":"/MDK_WorkOrderOutage/Styles/Styles.less","Localization":"/MDK_WorkOrderOutage/i18n/i18n.properties","_SchemaVersion":"23.4","StyleSheets":{"Styles":{"css":"/MDK_WorkOrderOutage/Styles/Styles.css","ios":"/MDK_WorkOrderOutage/Styles/Styles.nss","android":"/MDK_WorkOrderOutage/Styles/Styles.json"}}}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdate.action":
-/*!******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/AppUpdate.action ***!
-  \******************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdate.action":
+/*!************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdate.action ***!
+  \************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.ApplicationUpdate","ActionResult":{"_Name":"AppUpdate"},"OnFailure":"/DemoSampleApp/Rules/AppUpdateFailure.js","OnSuccess":"/DemoSampleApp/Rules/AppUpdateSuccess.js"}
+module.exports = {"_Type":"Action.Type.ApplicationUpdate","ActionResult":{"_Name":"AppUpdate"},"OnFailure":"/MDK_WorkOrderOutage/Rules/AppUpdateFailure.js","OnSuccess":"/MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action":
-/*!********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action ***!
-  \********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateFailureMessage.action":
+/*!**************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateFailureMessage.action ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Message":"Failed to update application - {#ActionResults:AppUpdate/error}","Duration":7,"Animated":true,"_Type":"Action.Type.BannerMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action":
-/*!********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action ***!
-  \********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateProgressBanner.action":
+/*!**************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateProgressBanner.action ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Animated":true,"CompletionTimeout":3,"Message":"Checking for Updates...","OnSuccess":"/DemoSampleApp/Actions/AppUpdate.action","_Type":"Action.Type.ProgressBanner"}
+module.exports = {"Animated":true,"CompletionTimeout":3,"Message":"Checking for Updates...","OnSuccess":"/MDK_WorkOrderOutage/Actions/AppUpdate.action","_Type":"Action.Type.ProgressBanner"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action":
-/*!********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action ***!
-  \********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action":
+/*!**************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Animated":true,"Duration":2,"Message":"Update application complete","_Type":"Action.Type.ToastMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action ***!
-  \******************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Cancel.action":
+/*!************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Cancel.action ***!
+  \************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.ClosePage","ActionResult":{"_Name":"CloseModalPage_Cancel"},"DismissModal":"Action.Type.ClosePage.Canceled","CancelPendingActions":true}
+module.exports = {"DismissModal":"Action.Type.ClosePage.Canceled","CancelPendingActions":true,"_Type":"Action.Type.ClosePage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action":
-/*!********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action ***!
-  \********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Complete.action":
+/*!**************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Complete.action ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.ClosePage","ActionResult":{"_Name":"CloseModalPage_Complete"},"DismissModal":"Action.Type.ClosePage.Completed","CancelPendingActions":false}
+module.exports = {"DismissModal":"Action.Type.ClosePage.Completed","CancelPendingActions":false,"_Type":"Action.Type.ClosePage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ClosePage.action":
-/*!******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/ClosePage.action ***!
-  \******************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/ClosePage.action":
+/*!************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/ClosePage.action ***!
+  \************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"_Type":"Action.Type.ClosePage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action":
-/*!*******************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action ***!
-  \*******************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"CreateCustomerEntityFailureMessage"},"Message":"Failed to Create Customer record - {#ActionResults:Customers_CreateEntity/error}","Title":"Create Customer","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action":
-/*!***************************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action ***!
-  \***************************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"CreateSalesOrderHeaderEntityFailureMessage"},"Message":"Failed to Create Sales Order record - {#ActionResults:SalesOrderHeaders_CreateEntity/error}","Title":"Create Sales Order","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action":
-/*!*******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action ***!
-  \*******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.ODataService.CreateEntity","ActionResult":{"_Name":"Customers_CreateEntity"},"OnFailure":"/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers"},"Properties":{"DateOfBirth":"#Control:FCCreateDOB/#Value","EmailAddress":"#Control:FCCreateEmail/#Value","FirstName":"#Control:FCCreateFirstName/#Value","LastName":"#Control:FCCreateLastName/#Value","PhoneNumber":"#Control:FCCreatePhone/#Value"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action":
-/*!*************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action ***!
-  \*************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"Customers_DeleteConfirmation"},"Message":"Delete current entity?","Title":"Delete Confirmation","OKCaption":"OK","CancelCaption":"Cancel"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action":
-/*!*******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action ***!
-  \*******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.ODataService.DeleteEntity","ActionResult":{"_Name":"Customers_DeleteEntity"},"OnFailure":"/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers","ReadLink":"{@odata.readLink}"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action":
-/*!*******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action ***!
-  \*******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.ODataService.UpdateEntity","ActionResult":{"_Name":"Customers_UpdateEntity"},"OnFailure":"/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","ValidationRule":"/DemoSampleApp/Rules/EmailValidation.js","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"Customers","ReadLink":"{@odata.readLink}"},"Properties":{"EmailAddress":"#Control:FCEmail/#Value","FirstName":"#Control:FCFirstName/#Value","LastName":"#Control:FCLastName/#Value","PhoneNumber":"#Control:FCPhone/#Value"}}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action":
-/*!*******************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action ***!
-  \*******************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"DeleteCustomerEntityFailureMessage"},"Message":"Delete entity failure - {#ActionResults:Customers_DeleteEntity/error}","Title":"Delete Customer","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_Detail.action":
 /*!**********************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_Detail.action ***!
   \**********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.BannerMessage","Message":"Upload failed!","Duration":0,"Animated":false,"OnActionLabelPress":"/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action","ActionLabel":"View Errors"}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/Customers/Customers_Detail.page"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action":
-/*!**********************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action ***!
-  \**********************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page","NavigationType":"Inner"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_List.action":
 /*!********************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_List.action ***!
   \********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page","NavigationType":"Inner"}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/Customers/Customers_List.page"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogSetLevel.action":
-/*!********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogSetLevel.action ***!
-  \********************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/ErrorArchive_SyncFailure.action":
+/*!****************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/ErrorArchive_SyncFailure.action ***!
+  \****************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Logger.SetLevel","ActionResult":{"_Name":"LogSetLevel"},"Level":"Trace"}
+module.exports = {"_Type":"Action.Type.BannerMessage","Message":"Upload failed!","Duration":0,"Animated":false,"OnActionLabelPress":"/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_List.action","ActionLabel":"View Errors"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogSetState.action":
-/*!********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogSetState.action ***!
-  \********************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_Detail.action":
+/*!****************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_Detail.action ***!
+  \****************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Logger.SetState","ActionResult":{"_Name":"LogSetState"},"OnSuccess":"/DemoSampleApp/Actions/LogSetLevel.action","LoggerState":"On"}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_Detail.page","NavigationType":"Inner"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUpload.action":
-/*!******************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogUpload.action ***!
-  \******************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_List.action":
+/*!**************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_List.action ***!
+  \**************************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Logger.Upload","ActionResult":{"_Name":"LogUpload"},"OnFailure":"/DemoSampleApp/Actions/LogUploadFailure.action","OnSuccess":"/DemoSampleApp/Actions/LogUploadSuccessful.action","ShowActivityIndicator":true,"ActivityIndicatorText":"Uploading Logs..."}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_List.page","NavigationType":"Inner"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action":
-/*!*************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action ***!
-  \*************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"LogUploadFailure"},"Message":"Failed to upload client logs - {#ActionResults:LogUpload/error}","Title":"Upload Client Logs","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action":
-/*!****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action ***!
-  \****************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.ToastMessage","ActionResult":{"_Name":"LogUploadSuccessful"},"Message":"Log File Uploaded","NumberOfLines":1,"Duration":3,"IsIconHidden":true,"Animated":true}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/Logout.action":
-/*!***************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Logout.action ***!
-  \***************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Logout.action":
+/*!*********************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Logout.action ***!
+  \*********************************************************************/
 /***/ ((module) => {
 
 module.exports = {"SkipReset":false,"_Type":"Action.Type.Logout"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/LogoutMessage.action":
-/*!**********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/LogoutMessage.action ***!
-  \**********************************************************************/
-/***/ ((module) => {
-
-module.exports = {"CancelCaption":"No","Message":"This action will remove all data and return to the Welcome screen. Any local data will be lost. Are you sure you want to continue?","OKCaption":"Yes","OnOK":"/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js","Title":"Logout","_Type":"Action.Type.Message"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action ***!
-  \******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToCustomers_Create"},"PageToOpen":"/DemoSampleApp/Pages/Customers_Create.page","ModalPage":true}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action ***!
-  \******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToCustomers_Detail"},"PageToOpen":"/DemoSampleApp/Pages/Customers_Detail.page"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action":
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/LogoutMessage.action":
 /*!****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action ***!
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/LogoutMessage.action ***!
   \****************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToCustomers_Edit"},"PageToOpen":"/DemoSampleApp/Pages/Customers_Edit.page","ModalPage":true}
+module.exports = {"CancelCaption":"No","Message":"This action will remove all data and return to the Welcome screen. Any local data will be lost. Are you sure you want to continue?","OKCaption":"Yes","OnOK":"/MDK_WorkOrderOutage/Rules/ResetAppSettingsAndLogout.js","Title":"Logout","_Type":"Action.Type.Message"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action":
-/*!****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action ***!
-  \****************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/NavToWork_Request_Details.action":
+/*!****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/NavToWork_Request_Details.action ***!
+  \****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToCustomers_List"},"PageToOpen":"/DemoSampleApp/Pages/Customers_List.page"}
+module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToWork_Request_Details"},"PageToOpen":"/MDK_WorkOrderOutage/Pages/Work_Request_Details.page"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action ***!
-  \******************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToCustomers_Orders"},"PageToOpen":"/DemoSampleApp/Pages/Customers_Orders.page"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action":
-/*!**************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action ***!
-  \**************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToSalesOrderHeaders_Create"},"PageToOpen":"/DemoSampleApp/Pages/SalesOrderHeaders_Create.page","ModalPage":true}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action":
-/*!*********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action ***!
-  \*********************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Navigation","ActionResult":{"_Name":"NavToSalesOrders_Details"},"PageToOpen":"/DemoSampleApp/Pages/SalesOrders_Details.page"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action":
-/*!*********************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action ***!
-  \*********************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/OnWillUpdate.action":
+/*!***************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/OnWillUpdate.action ***!
+  \***************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"_Type":"Action.Type.Message","Message":"A new version of the application is now ready to apply. Do you want to update to this version?","Title":"New Version Available!","OKCaption":"Now","CancelCaption":"Later","ActionResult":{"_Name":"OnWillUpdate"}}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action":
-/*!***************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action ***!
-  \***************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_Detail.action":
+/*!********************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_Detail.action ***!
+  \********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.ODataService.CreateRelatedEntity","ActionResult":{"_Name":"SalesOrderHeaders_CreateEntity"},"OnFailure":"/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/CloseModalPage_Complete.action","Target":{"Service":"/DemoSampleApp/Services/SampleServiceV2.service","EntitySet":"SalesOrderHeaders"},"ParentLink":{"Target":{"EntitySet":"Customers","ReadLink":"{@odata.readLink}"},"Property":"SalesOrders"},"Properties":{"CreatedAt":"#Control:FCCreatedate/#Value","CurrencyCode":"#Control:FCCreateCurrencyCode/#Value","GrossAmount":"#Control:FCCreateGrossAmount/#Value","LifeCycleStatus":"#Control:FCCreateLifeCycleStatus/#Value","LifeCycleStatusName":"#Control:FCCreateLifeCycleStatusName/#Value","NetAmount":"#Control:FCCreateNetAmount/#Value","TaxAmount":"#Control:FCCreateTaxAmount/#Value"}}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/Products/Products_Detail.page"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action":
-/*!*****************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action ***!
-  \*****************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_List.action":
+/*!******************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_List.action ***!
+  \******************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.OfflineOData.Close","Service":"/DemoSampleApp/Services/SampleServiceV2.service","Force":true,"ActionResult":{"_Name":"close"},"OnSuccess":"/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action","OnFailure":"/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action"}
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/Products/Products_List.page"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action":
-/*!*******************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action ***!
-  \*******************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Detail.action":
+/*!********************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Detail.action ***!
+  \********************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_Detail.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action":
+/*!******************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action ***!
+  \******************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_List.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action":
+/*!****************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action ***!
+  \****************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_Detail.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_List.action":
+/*!**************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_List.action ***!
+  \**************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_List.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action":
+/*!**************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action ***!
+  \**************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_Detail.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_List.action":
+/*!************************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_List.action ***!
+  \************************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_List.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action":
+/*!**********************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action ***!
+  \**********************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_Detail.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_List.action":
+/*!********************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_List.action ***!
+  \********************************************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.Navigation","PageToOpen":"/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_List.page"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOffline.action":
+/*!***********************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOffline.action ***!
+  \***********************************************************************************/
+/***/ ((module) => {
+
+module.exports = {"_Type":"Action.Type.OfflineOData.Close","Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","Force":true,"ActionResult":{"_Name":"close"},"OnSuccess":"/MDK_WorkOrderOutage/Actions/Service/CloseOfflineSuccessMessage.action","OnFailure":"/MDK_WorkOrderOutage/Actions/Service/CloseOfflineFailureMessage.action"}
+
+/***/ }),
+
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineFailureMessage.action":
+/*!*************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineFailureMessage.action ***!
+  \*************************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Message":"Failure closing data service - {#ActionResults:close/error}","NumberOfLines":1,"Duration":3,"Animated":true,"IsIconHidden":true,"_Type":"Action.Type.ToastMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action":
-/*!*******************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action ***!
-  \*******************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineSuccessMessage.action":
+/*!*************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineSuccessMessage.action ***!
+  \*************************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Message":"Data service closed successfully","NumberOfLines":1,"Duration":3,"Animated":true,"IsIconHidden":true,"_Type":"Action.Type.ToastMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action":
-/*!********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action ***!
-  \********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadOffline.action":
+/*!**************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadOffline.action ***!
+  \**************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Service":"/DemoSampleApp/Services/SampleServiceV2.service","DefiningRequests":[{"Name":"Customers","Query":"Customers"},{"Name":"Products","Query":"Products"},{"Name":"SalesOrderHeaders","Query":"SalesOrderHeaders"},{"Name":"SalesOrderItems","Query":"SalesOrderItems"}],"_Type":"Action.Type.OfflineOData.Download","ActionResult":{"_Name":"sync"},"OnFailure":"/DemoSampleApp/Actions/Service/SyncFailureMessage.action","OnSuccess":"/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"}
+module.exports = {"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","DefiningRequests":[{"Name":"Customers","Query":"Customers"},{"Name":"PurchaseOrderHeaders","Query":"PurchaseOrderHeaders"},{"Name":"PurchaseOrderItems","Query":"PurchaseOrderItems"},{"Name":"SalesOrderHeaders","Query":"SalesOrderHeaders"},{"Name":"SalesOrderItems","Query":"SalesOrderItems"},{"Name":"Products","Query":"Products"}],"_Type":"Action.Type.OfflineOData.Download","ActionResult":{"_Name":"sync"},"OnFailure":"/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action","OnSuccess":"/MDK_WorkOrderOutage/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action":
-/*!***************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action ***!
-  \***************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action":
+/*!*********************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action ***!
+  \*********************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Message":"Download in progress...","CompletionMessage":"Download Successful","CompletionTimeout":7,"OnSuccess":"/DemoSampleApp/Actions/Service/DownloadOffline.action","_Type":"Action.Type.ProgressBanner"}
+module.exports = {"Message":"Download in progress...","CompletionMessage":"Download Successful","CompletionTimeout":7,"OnSuccess":"/MDK_WorkOrderOutage/Actions/Service/DownloadOffline.action","_Type":"Action.Type.ProgressBanner"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action":
-/*!**********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action ***!
-  \**********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action":
+/*!****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action ***!
+  \****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"_Type":"Action.Type.ODataService.Initialize","ActionResult":{"_Name":"init"},"OnFailure":"/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action","OnSuccess":"/DemoSampleApp/Actions/LogSetState.action","ShowActivityIndicator":true,"ActivityIndicatorText":"Downloading...","Service":"/DemoSampleApp/Services/SampleServiceV2.service","DefiningRequests":[{"Name":"Customers","Query":"Customers"},{"Name":"Products","Query":"Products"},{"Name":"SalesOrderHeaders","Query":"SalesOrderHeaders"},{"Name":"SalesOrderItems","Query":"SalesOrderItems"}]}
+module.exports = {"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","DefiningRequests":[{"Name":"Customers","Query":"Customers"},{"Name":"PurchaseOrderHeaders","Query":"PurchaseOrderHeaders"},{"Name":"PurchaseOrderItems","Query":"PurchaseOrderItems"},{"Name":"SalesOrderHeaders","Query":"SalesOrderHeaders"},{"Name":"SalesOrderItems","Query":"SalesOrderItems"},{"Name":"Products","Query":"Products"}],"_Type":"Action.Type.ODataService.Initialize","ShowActivityIndicator":true,"ActivityIndicatorText":"Downloading...","ActionResult":{"_Name":"init"},"OnSuccess":"/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action","OnFailure":"/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action":
-/*!************************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action ***!
-  \************************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action":
+/*!******************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action ***!
+  \******************************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Message":"Failed to initialize application data service - {#ActionResults:init/error}","Duration":7,"Animated":true,"_Type":"Action.Type.BannerMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action":
-/*!************************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action ***!
-  \************************************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action":
+/*!******************************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action ***!
+  \******************************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Animated":true,"Duration":2,"Message":"Application data service initialized","IsIconHidden":true,"_Type":"Action.Type.ToastMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action":
-/*!***********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action ***!
-  \***********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action":
+/*!*****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action ***!
+  \*****************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Message":"Sync offline data service failure - {#ActionResults:sync/error}","Duration":7,"Animated":true,"_Type":"Action.Type.BannerMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action":
-/*!***********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action ***!
-  \***********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncStartedMessage.action":
+/*!*****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncStartedMessage.action ***!
+  \*****************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Message":"Upload in progress...","CompletionMessage":"Sync completed","CompletionTimeout":7,"OnSuccess":"/DemoSampleApp/Actions/Service/UploadOffline.action","OnFailure":"/DemoSampleApp/Actions/Service/SyncFailureMessage.action","_Type":"Action.Type.ProgressBanner"}
+module.exports = {"Message":"Upload in progress...","CompletionMessage":"Sync completed","CompletionTimeout":7,"OnSuccess":"/MDK_WorkOrderOutage/Actions/Service/UploadOffline.action","OnFailure":"/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action","_Type":"Action.Type.ProgressBanner"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action":
-/*!***********************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action ***!
-  \***********************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncSuccessMessage.action":
+/*!*****************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncSuccessMessage.action ***!
+  \*****************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Animated":true,"Duration":2,"Message":"Sync offline data service complete","_Type":"Action.Type.ToastMessage"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action ***!
-  \******************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/UploadOffline.action":
+/*!************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Actions/Service/UploadOffline.action ***!
+  \************************************************************************************/
 /***/ ((module) => {
 
-module.exports = {"Service":"/DemoSampleApp/Services/SampleServiceV2.service","_Type":"Action.Type.OfflineOData.Upload","ActionResult":{"_Name":"sync"},"OnSuccess":"/DemoSampleApp/Actions/Service/DownloadStartedMessage.action","OnFailure":"/DemoSampleApp/Actions/Service/SyncFailureMessage.action"}
+module.exports = {"Service":"/MDK_WorkOrderOutage/Services/SampleServiceV2.service","_Type":"Action.Type.OfflineOData.Upload","ActionResult":{"_Name":"sync"},"OnSuccess":"/MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action","OnFailure":"/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action":
-/*!*******************************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action ***!
-  \*******************************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"UpdateCustomerEntityFailureMessage"},"Message":"Failed to Save Customer Updates - {#ActionResults:Customers_UpdateEntity/error}","Title":"Update Customer","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Actions/ValidationFailure.action":
-/*!**************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Actions/ValidationFailure.action ***!
-  \**************************************************************************/
-/***/ ((module) => {
-
-module.exports = {"_Type":"Action.Type.Message","ActionResult":{"_Name":"ValidationFailure"},"Message":"Email address is not in the correct format recipient @ domain . domaintype","Title":"Validate Email","OKCaption":"OK"}
-
-/***/ }),
-
-/***/ "./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global":
-/*!******************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global ***!
-  \******************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Globals/AppDefinition_Version.global":
+/*!************************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Globals/AppDefinition_Version.global ***!
+  \************************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"Value":"1.0.0","_Type":"String"}
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Services/SampleServiceV2.service":
-/*!**************************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Services/SampleServiceV2.service ***!
-  \**************************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Services/SampleServiceV2.service":
+/*!********************************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Services/SampleServiceV2.service ***!
+  \********************************************************************************/
 /***/ ((module) => {
 
 module.exports = {"DestinationName":"SampleServiceV2","OfflineEnabled":true,"LanguageURLParam":"","OnlineOptions":{},"PathSuffix":"","SourceType":"Mobile","ServiceUrl":""}
@@ -1095,167 +1013,159 @@ module.exports = "1.1\n"
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 let application_app = __webpack_require__(/*! ./Application.app */ "./build.definitions/Application.app")
-let demosampleapp_actions_appupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdate.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdate.action")
-let demosampleapp_actions_appupdatefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateFailureMessage.action")
-let demosampleapp_actions_appupdateprogressbanner_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateProgressBanner.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateProgressBanner.action")
-let demosampleapp_actions_appupdatesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/AppUpdateSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/AppUpdateSuccessMessage.action")
-let demosampleapp_actions_closemodalpage_cancel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Cancel.action */ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Cancel.action")
-let demosampleapp_actions_closemodalpage_complete_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CloseModalPage_Complete.action */ "./build.definitions/DemoSampleApp/Actions/CloseModalPage_Complete.action")
-let demosampleapp_actions_closepage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ClosePage.action */ "./build.definitions/DemoSampleApp/Actions/ClosePage.action")
-let demosampleapp_actions_createcustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/CreateCustomerEntityFailureMessage.action")
-let demosampleapp_actions_createsalesorderheaderentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/CreateSalesOrderHeaderEntityFailureMessage.action")
-let demosampleapp_actions_customers_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_CreateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_CreateEntity.action")
-let demosampleapp_actions_customers_deleteconfirmation_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteConfirmation.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteConfirmation.action")
-let demosampleapp_actions_customers_deleteentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_DeleteEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_DeleteEntity.action")
-let demosampleapp_actions_customers_updateentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Customers_UpdateEntity.action */ "./build.definitions/DemoSampleApp/Actions/Customers_UpdateEntity.action")
-let demosampleapp_actions_deletecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/DeleteCustomerEntityFailureMessage.action")
-let demosampleapp_actions_errorarchive_errorarchive_syncfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/ErrorArchive_SyncFailure.action")
-let demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_Detail.action")
-let demosampleapp_actions_errorarchive_navtoerrorarchive_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action */ "./build.definitions/DemoSampleApp/Actions/ErrorArchive/NavToErrorArchive_List.action")
-let demosampleapp_actions_logout_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Logout.action */ "./build.definitions/DemoSampleApp/Actions/Logout.action")
-let demosampleapp_actions_logoutmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogoutMessage.action */ "./build.definitions/DemoSampleApp/Actions/LogoutMessage.action")
-let demosampleapp_actions_logsetlevel_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetLevel.action */ "./build.definitions/DemoSampleApp/Actions/LogSetLevel.action")
-let demosampleapp_actions_logsetstate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogSetState.action */ "./build.definitions/DemoSampleApp/Actions/LogSetState.action")
-let demosampleapp_actions_logupload_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUpload.action */ "./build.definitions/DemoSampleApp/Actions/LogUpload.action")
-let demosampleapp_actions_loguploadfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadFailure.action */ "./build.definitions/DemoSampleApp/Actions/LogUploadFailure.action")
-let demosampleapp_actions_loguploadsuccessful_action = __webpack_require__(/*! ./DemoSampleApp/Actions/LogUploadSuccessful.action */ "./build.definitions/DemoSampleApp/Actions/LogUploadSuccessful.action")
-let demosampleapp_actions_navtocustomers_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Create.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Create.action")
-let demosampleapp_actions_navtocustomers_detail_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Detail.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Detail.action")
-let demosampleapp_actions_navtocustomers_edit_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Edit.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Edit.action")
-let demosampleapp_actions_navtocustomers_list_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_List.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_List.action")
-let demosampleapp_actions_navtocustomers_orders_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToCustomers_Orders.action */ "./build.definitions/DemoSampleApp/Actions/NavToCustomers_Orders.action")
-let demosampleapp_actions_navtosalesorderheaders_create_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action */ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrderHeaders_Create.action")
-let demosampleapp_actions_navtosalesorders_details_action = __webpack_require__(/*! ./DemoSampleApp/Actions/NavToSalesOrders_Details.action */ "./build.definitions/DemoSampleApp/Actions/NavToSalesOrders_Details.action")
-let demosampleapp_actions_onwillupdate_action = __webpack_require__(/*! ./DemoSampleApp/Actions/OnWillUpdate.action */ "./build.definitions/DemoSampleApp/Actions/OnWillUpdate.action")
-let demosampleapp_actions_salesorderheaders_createentity_action = __webpack_require__(/*! ./DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action */ "./build.definitions/DemoSampleApp/Actions/SalesOrderHeaders_CreateEntity.action")
-let demosampleapp_actions_service_closeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOffline.action")
-let demosampleapp_actions_service_closeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineFailureMessage.action")
-let demosampleapp_actions_service_closeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/CloseOfflineSuccessMessage.action")
-let demosampleapp_actions_service_downloadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/DownloadOffline.action")
-let demosampleapp_actions_service_downloadstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/DownloadStartedMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/DownloadStartedMessage.action")
-let demosampleapp_actions_service_initializeoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOffline.action")
-let demosampleapp_actions_service_initializeofflinefailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineFailureMessage.action")
-let demosampleapp_actions_service_initializeofflinesuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/InitializeOfflineSuccessMessage.action")
-let demosampleapp_actions_service_syncfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncFailureMessage.action")
-let demosampleapp_actions_service_syncstartedmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncStartedMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncStartedMessage.action")
-let demosampleapp_actions_service_syncsuccessmessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/SyncSuccessMessage.action */ "./build.definitions/DemoSampleApp/Actions/Service/SyncSuccessMessage.action")
-let demosampleapp_actions_service_uploadoffline_action = __webpack_require__(/*! ./DemoSampleApp/Actions/Service/UploadOffline.action */ "./build.definitions/DemoSampleApp/Actions/Service/UploadOffline.action")
-let demosampleapp_actions_updatecustomerentityfailuremessage_action = __webpack_require__(/*! ./DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action */ "./build.definitions/DemoSampleApp/Actions/UpdateCustomerEntityFailureMessage.action")
-let demosampleapp_actions_validationfailure_action = __webpack_require__(/*! ./DemoSampleApp/Actions/ValidationFailure.action */ "./build.definitions/DemoSampleApp/Actions/ValidationFailure.action")
-let demosampleapp_globals_appdefinition_version_global = __webpack_require__(/*! ./DemoSampleApp/Globals/AppDefinition_Version.global */ "./build.definitions/DemoSampleApp/Globals/AppDefinition_Version.global")
-let demosampleapp_i18n_i18n_properties = __webpack_require__(/*! ./DemoSampleApp/i18n/i18n.properties */ "./build.definitions/DemoSampleApp/i18n/i18n.properties")
-let demosampleapp_jsconfig_json = __webpack_require__(/*! ./DemoSampleApp/jsconfig.json */ "./build.definitions/DemoSampleApp/jsconfig.json")
-let demosampleapp_pages_customers_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Create.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Create.page")
-let demosampleapp_pages_customers_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Detail.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Detail.page")
-let demosampleapp_pages_customers_edit_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Edit.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Edit.page")
-let demosampleapp_pages_customers_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_List.page */ "./build.definitions/DemoSampleApp/Pages/Customers_List.page")
-let demosampleapp_pages_customers_orders_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Customers_Orders.page */ "./build.definitions/DemoSampleApp/Pages/Customers_Orders.page")
-let demosampleapp_pages_errorarchive_errorarchive_detail_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page */ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_Detail.page")
-let demosampleapp_pages_errorarchive_errorarchive_list_page = __webpack_require__(/*! ./DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page */ "./build.definitions/DemoSampleApp/Pages/ErrorArchive/ErrorArchive_List.page")
-let demosampleapp_pages_main_page = __webpack_require__(/*! ./DemoSampleApp/Pages/Main.page */ "./build.definitions/DemoSampleApp/Pages/Main.page")
-let demosampleapp_pages_salesorderheaders_create_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrderHeaders_Create.page */ "./build.definitions/DemoSampleApp/Pages/SalesOrderHeaders_Create.page")
-let demosampleapp_pages_salesorders_details_page = __webpack_require__(/*! ./DemoSampleApp/Pages/SalesOrders_Details.page */ "./build.definitions/DemoSampleApp/Pages/SalesOrders_Details.page")
-let demosampleapp_rules_appupdatefailure_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateFailure.js */ "./build.definitions/DemoSampleApp/Rules/AppUpdateFailure.js")
-let demosampleapp_rules_appupdatesuccess_js = __webpack_require__(/*! ./DemoSampleApp/Rules/AppUpdateSuccess.js */ "./build.definitions/DemoSampleApp/Rules/AppUpdateSuccess.js")
-let demosampleapp_rules_customers_deleteconfirmation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_DeleteConfirmation.js */ "./build.definitions/DemoSampleApp/Rules/Customers_DeleteConfirmation.js")
-let demosampleapp_rules_customers_ordercount_js = __webpack_require__(/*! ./DemoSampleApp/Rules/Customers_OrderCount.js */ "./build.definitions/DemoSampleApp/Rules/Customers_OrderCount.js")
-let demosampleapp_rules_emailvalidation_js = __webpack_require__(/*! ./DemoSampleApp/Rules/EmailValidation.js */ "./build.definitions/DemoSampleApp/Rules/EmailValidation.js")
-let demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js */ "./build.definitions/DemoSampleApp/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js")
-let demosampleapp_rules_onwillupdate_js = __webpack_require__(/*! ./DemoSampleApp/Rules/OnWillUpdate.js */ "./build.definitions/DemoSampleApp/Rules/OnWillUpdate.js")
-let demosampleapp_rules_resetappsettingsandlogout_js = __webpack_require__(/*! ./DemoSampleApp/Rules/ResetAppSettingsAndLogout.js */ "./build.definitions/DemoSampleApp/Rules/ResetAppSettingsAndLogout.js")
-let demosampleapp_services_sampleservicev2_service = __webpack_require__(/*! ./DemoSampleApp/Services/SampleServiceV2.service */ "./build.definitions/DemoSampleApp/Services/SampleServiceV2.service")
-let demosampleapp_styles_styles_css = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.css */ "./build.definitions/DemoSampleApp/Styles/Styles.css")
-let demosampleapp_styles_styles_json = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.json */ "./build.definitions/DemoSampleApp/Styles/Styles.json")
-let demosampleapp_styles_styles_less = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.less */ "./build.definitions/DemoSampleApp/Styles/Styles.less")
-let demosampleapp_styles_styles_nss = __webpack_require__(/*! ./DemoSampleApp/Styles/Styles.nss */ "./build.definitions/DemoSampleApp/Styles/Styles.nss")
+let mdk_workorderoutage_actions_appupdate_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/AppUpdate.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdate.action")
+let mdk_workorderoutage_actions_appupdatefailuremessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/AppUpdateFailureMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateFailureMessage.action")
+let mdk_workorderoutage_actions_appupdateprogressbanner_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/AppUpdateProgressBanner.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateProgressBanner.action")
+let mdk_workorderoutage_actions_appupdatesuccessmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/AppUpdateSuccessMessage.action")
+let mdk_workorderoutage_actions_closemodalpage_cancel_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/CloseModalPage_Cancel.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Cancel.action")
+let mdk_workorderoutage_actions_closemodalpage_complete_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/CloseModalPage_Complete.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/CloseModalPage_Complete.action")
+let mdk_workorderoutage_actions_closepage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/ClosePage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/ClosePage.action")
+let mdk_workorderoutage_actions_customers_navtocustomers_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_Detail.action")
+let mdk_workorderoutage_actions_customers_navtocustomers_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Customers/NavToCustomers_List.action")
+let mdk_workorderoutage_actions_errorarchive_errorarchive_syncfailure_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/ErrorArchive/ErrorArchive_SyncFailure.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/ErrorArchive_SyncFailure.action")
+let mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_Detail.action")
+let mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/ErrorArchive/NavToErrorArchive_List.action")
+let mdk_workorderoutage_actions_logout_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Logout.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Logout.action")
+let mdk_workorderoutage_actions_logoutmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/LogoutMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/LogoutMessage.action")
+let mdk_workorderoutage_actions_navtowork_request_details_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/NavToWork_Request_Details.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/NavToWork_Request_Details.action")
+let mdk_workorderoutage_actions_onwillupdate_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/OnWillUpdate.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/OnWillUpdate.action")
+let mdk_workorderoutage_actions_products_navtoproducts_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Products/NavToProducts_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_Detail.action")
+let mdk_workorderoutage_actions_products_navtoproducts_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Products/NavToProducts_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Products/NavToProducts_List.action")
+let mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_Detail.action")
+let mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderHeaders/NavToPurchaseOrderHeaders_List.action")
+let mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_Detail.action")
+let mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/PurchaseOrderItems/NavToPurchaseOrderItems_List.action")
+let mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_Detail.action")
+let mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderHeaders/NavToSalesOrderHeaders_List.action")
+let mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_detail_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_Detail.action")
+let mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_list_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_List.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/SalesOrderItems/NavToSalesOrderItems_List.action")
+let mdk_workorderoutage_actions_service_closeoffline_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/CloseOffline.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOffline.action")
+let mdk_workorderoutage_actions_service_closeofflinefailuremessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/CloseOfflineFailureMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineFailureMessage.action")
+let mdk_workorderoutage_actions_service_closeofflinesuccessmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/CloseOfflineSuccessMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/CloseOfflineSuccessMessage.action")
+let mdk_workorderoutage_actions_service_downloadoffline_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/DownloadOffline.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadOffline.action")
+let mdk_workorderoutage_actions_service_downloadstartedmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action")
+let mdk_workorderoutage_actions_service_initializeoffline_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOffline.action")
+let mdk_workorderoutage_actions_service_initializeofflinefailuremessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action")
+let mdk_workorderoutage_actions_service_initializeofflinesuccessmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action")
+let mdk_workorderoutage_actions_service_syncfailuremessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action")
+let mdk_workorderoutage_actions_service_syncstartedmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/SyncStartedMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncStartedMessage.action")
+let mdk_workorderoutage_actions_service_syncsuccessmessage_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/SyncSuccessMessage.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/SyncSuccessMessage.action")
+let mdk_workorderoutage_actions_service_uploadoffline_action = __webpack_require__(/*! ./MDK_WorkOrderOutage/Actions/Service/UploadOffline.action */ "./build.definitions/MDK_WorkOrderOutage/Actions/Service/UploadOffline.action")
+let mdk_workorderoutage_globals_appdefinition_version_global = __webpack_require__(/*! ./MDK_WorkOrderOutage/Globals/AppDefinition_Version.global */ "./build.definitions/MDK_WorkOrderOutage/Globals/AppDefinition_Version.global")
+let mdk_workorderoutage_i18n_i18n_properties = __webpack_require__(/*! ./MDK_WorkOrderOutage/i18n/i18n.properties */ "./build.definitions/MDK_WorkOrderOutage/i18n/i18n.properties")
+let mdk_workorderoutage_jsconfig_json = __webpack_require__(/*! ./MDK_WorkOrderOutage/jsconfig.json */ "./build.definitions/MDK_WorkOrderOutage/jsconfig.json")
+let mdk_workorderoutage_pages_customers_customers_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Customers/Customers_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_Detail.page")
+let mdk_workorderoutage_pages_customers_customers_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Customers/Customers_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Customers/Customers_List.page")
+let mdk_workorderoutage_pages_errorarchive_errorarchive_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_Detail.page")
+let mdk_workorderoutage_pages_errorarchive_errorarchive_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/ErrorArchive/ErrorArchive_List.page")
+let mdk_workorderoutage_pages_main_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Main.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Main.page")
+let mdk_workorderoutage_pages_products_products_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Products/Products_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_Detail.page")
+let mdk_workorderoutage_pages_products_products_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Products/Products_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Products/Products_List.page")
+let mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_Detail.page")
+let mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderHeaders/PurchaseOrderHeaders_List.page")
+let mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_Detail.page")
+let mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/PurchaseOrderItems/PurchaseOrderItems_List.page")
+let mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_Detail.page")
+let mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderHeaders/SalesOrderHeaders_List.page")
+let mdk_workorderoutage_pages_salesorderitems_salesorderitems_detail_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_Detail.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_Detail.page")
+let mdk_workorderoutage_pages_salesorderitems_salesorderitems_list_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_List.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/SalesOrderItems/SalesOrderItems_List.page")
+let mdk_workorderoutage_pages_work_confirmation_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Work_Confirmation.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Work_Confirmation.page")
+let mdk_workorderoutage_pages_work_request_details_page = __webpack_require__(/*! ./MDK_WorkOrderOutage/Pages/Work_Request_Details.page */ "./build.definitions/MDK_WorkOrderOutage/Pages/Work_Request_Details.page")
+let mdk_workorderoutage_rules_appupdatefailure_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/AppUpdateFailure.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateFailure.js")
+let mdk_workorderoutage_rules_appupdatesuccess_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/AppUpdateSuccess.js")
+let mdk_workorderoutage_rules_errorarchive_errorarchive_checkforsyncerror_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js")
+let mdk_workorderoutage_rules_onwillupdate_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/OnWillUpdate.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/OnWillUpdate.js")
+let mdk_workorderoutage_rules_openworkcofirmation_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/OpenWorkCofirmation.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/OpenWorkCofirmation.js")
+let mdk_workorderoutage_rules_resetappsettingsandlogout_js = __webpack_require__(/*! ./MDK_WorkOrderOutage/Rules/ResetAppSettingsAndLogout.js */ "./build.definitions/MDK_WorkOrderOutage/Rules/ResetAppSettingsAndLogout.js")
+let mdk_workorderoutage_services_sampleservicev2_service = __webpack_require__(/*! ./MDK_WorkOrderOutage/Services/SampleServiceV2.service */ "./build.definitions/MDK_WorkOrderOutage/Services/SampleServiceV2.service")
+let mdk_workorderoutage_styles_styles_css = __webpack_require__(/*! ./MDK_WorkOrderOutage/Styles/Styles.css */ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.css")
+let mdk_workorderoutage_styles_styles_json = __webpack_require__(/*! ./MDK_WorkOrderOutage/Styles/Styles.json */ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.json")
+let mdk_workorderoutage_styles_styles_less = __webpack_require__(/*! ./MDK_WorkOrderOutage/Styles/Styles.less */ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.less")
+let mdk_workorderoutage_styles_styles_nss = __webpack_require__(/*! ./MDK_WorkOrderOutage/Styles/Styles.nss */ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.nss")
 let tsconfig_json = __webpack_require__(/*! ./tsconfig.json */ "./build.definitions/tsconfig.json")
 let version_mdkbundlerversion = __webpack_require__(/*! ./version.mdkbundlerversion */ "./build.definitions/version.mdkbundlerversion")
 
 module.exports = {
 	application_app : application_app,
-	demosampleapp_actions_appupdate_action : demosampleapp_actions_appupdate_action,
-	demosampleapp_actions_appupdatefailuremessage_action : demosampleapp_actions_appupdatefailuremessage_action,
-	demosampleapp_actions_appupdateprogressbanner_action : demosampleapp_actions_appupdateprogressbanner_action,
-	demosampleapp_actions_appupdatesuccessmessage_action : demosampleapp_actions_appupdatesuccessmessage_action,
-	demosampleapp_actions_closemodalpage_cancel_action : demosampleapp_actions_closemodalpage_cancel_action,
-	demosampleapp_actions_closemodalpage_complete_action : demosampleapp_actions_closemodalpage_complete_action,
-	demosampleapp_actions_closepage_action : demosampleapp_actions_closepage_action,
-	demosampleapp_actions_createcustomerentityfailuremessage_action : demosampleapp_actions_createcustomerentityfailuremessage_action,
-	demosampleapp_actions_createsalesorderheaderentityfailuremessage_action : demosampleapp_actions_createsalesorderheaderentityfailuremessage_action,
-	demosampleapp_actions_customers_createentity_action : demosampleapp_actions_customers_createentity_action,
-	demosampleapp_actions_customers_deleteconfirmation_action : demosampleapp_actions_customers_deleteconfirmation_action,
-	demosampleapp_actions_customers_deleteentity_action : demosampleapp_actions_customers_deleteentity_action,
-	demosampleapp_actions_customers_updateentity_action : demosampleapp_actions_customers_updateentity_action,
-	demosampleapp_actions_deletecustomerentityfailuremessage_action : demosampleapp_actions_deletecustomerentityfailuremessage_action,
-	demosampleapp_actions_errorarchive_errorarchive_syncfailure_action : demosampleapp_actions_errorarchive_errorarchive_syncfailure_action,
-	demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action : demosampleapp_actions_errorarchive_navtoerrorarchive_detail_action,
-	demosampleapp_actions_errorarchive_navtoerrorarchive_list_action : demosampleapp_actions_errorarchive_navtoerrorarchive_list_action,
-	demosampleapp_actions_logout_action : demosampleapp_actions_logout_action,
-	demosampleapp_actions_logoutmessage_action : demosampleapp_actions_logoutmessage_action,
-	demosampleapp_actions_logsetlevel_action : demosampleapp_actions_logsetlevel_action,
-	demosampleapp_actions_logsetstate_action : demosampleapp_actions_logsetstate_action,
-	demosampleapp_actions_logupload_action : demosampleapp_actions_logupload_action,
-	demosampleapp_actions_loguploadfailure_action : demosampleapp_actions_loguploadfailure_action,
-	demosampleapp_actions_loguploadsuccessful_action : demosampleapp_actions_loguploadsuccessful_action,
-	demosampleapp_actions_navtocustomers_create_action : demosampleapp_actions_navtocustomers_create_action,
-	demosampleapp_actions_navtocustomers_detail_action : demosampleapp_actions_navtocustomers_detail_action,
-	demosampleapp_actions_navtocustomers_edit_action : demosampleapp_actions_navtocustomers_edit_action,
-	demosampleapp_actions_navtocustomers_list_action : demosampleapp_actions_navtocustomers_list_action,
-	demosampleapp_actions_navtocustomers_orders_action : demosampleapp_actions_navtocustomers_orders_action,
-	demosampleapp_actions_navtosalesorderheaders_create_action : demosampleapp_actions_navtosalesorderheaders_create_action,
-	demosampleapp_actions_navtosalesorders_details_action : demosampleapp_actions_navtosalesorders_details_action,
-	demosampleapp_actions_onwillupdate_action : demosampleapp_actions_onwillupdate_action,
-	demosampleapp_actions_salesorderheaders_createentity_action : demosampleapp_actions_salesorderheaders_createentity_action,
-	demosampleapp_actions_service_closeoffline_action : demosampleapp_actions_service_closeoffline_action,
-	demosampleapp_actions_service_closeofflinefailuremessage_action : demosampleapp_actions_service_closeofflinefailuremessage_action,
-	demosampleapp_actions_service_closeofflinesuccessmessage_action : demosampleapp_actions_service_closeofflinesuccessmessage_action,
-	demosampleapp_actions_service_downloadoffline_action : demosampleapp_actions_service_downloadoffline_action,
-	demosampleapp_actions_service_downloadstartedmessage_action : demosampleapp_actions_service_downloadstartedmessage_action,
-	demosampleapp_actions_service_initializeoffline_action : demosampleapp_actions_service_initializeoffline_action,
-	demosampleapp_actions_service_initializeofflinefailuremessage_action : demosampleapp_actions_service_initializeofflinefailuremessage_action,
-	demosampleapp_actions_service_initializeofflinesuccessmessage_action : demosampleapp_actions_service_initializeofflinesuccessmessage_action,
-	demosampleapp_actions_service_syncfailuremessage_action : demosampleapp_actions_service_syncfailuremessage_action,
-	demosampleapp_actions_service_syncstartedmessage_action : demosampleapp_actions_service_syncstartedmessage_action,
-	demosampleapp_actions_service_syncsuccessmessage_action : demosampleapp_actions_service_syncsuccessmessage_action,
-	demosampleapp_actions_service_uploadoffline_action : demosampleapp_actions_service_uploadoffline_action,
-	demosampleapp_actions_updatecustomerentityfailuremessage_action : demosampleapp_actions_updatecustomerentityfailuremessage_action,
-	demosampleapp_actions_validationfailure_action : demosampleapp_actions_validationfailure_action,
-	demosampleapp_globals_appdefinition_version_global : demosampleapp_globals_appdefinition_version_global,
-	demosampleapp_i18n_i18n_properties : demosampleapp_i18n_i18n_properties,
-	demosampleapp_jsconfig_json : demosampleapp_jsconfig_json,
-	demosampleapp_pages_customers_create_page : demosampleapp_pages_customers_create_page,
-	demosampleapp_pages_customers_detail_page : demosampleapp_pages_customers_detail_page,
-	demosampleapp_pages_customers_edit_page : demosampleapp_pages_customers_edit_page,
-	demosampleapp_pages_customers_list_page : demosampleapp_pages_customers_list_page,
-	demosampleapp_pages_customers_orders_page : demosampleapp_pages_customers_orders_page,
-	demosampleapp_pages_errorarchive_errorarchive_detail_page : demosampleapp_pages_errorarchive_errorarchive_detail_page,
-	demosampleapp_pages_errorarchive_errorarchive_list_page : demosampleapp_pages_errorarchive_errorarchive_list_page,
-	demosampleapp_pages_main_page : demosampleapp_pages_main_page,
-	demosampleapp_pages_salesorderheaders_create_page : demosampleapp_pages_salesorderheaders_create_page,
-	demosampleapp_pages_salesorders_details_page : demosampleapp_pages_salesorders_details_page,
-	demosampleapp_rules_appupdatefailure_js : demosampleapp_rules_appupdatefailure_js,
-	demosampleapp_rules_appupdatesuccess_js : demosampleapp_rules_appupdatesuccess_js,
-	demosampleapp_rules_customers_deleteconfirmation_js : demosampleapp_rules_customers_deleteconfirmation_js,
-	demosampleapp_rules_customers_ordercount_js : demosampleapp_rules_customers_ordercount_js,
-	demosampleapp_rules_emailvalidation_js : demosampleapp_rules_emailvalidation_js,
-	demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js : demosampleapp_rules_errorarchive_errorarchive_checkforsyncerror_js,
-	demosampleapp_rules_onwillupdate_js : demosampleapp_rules_onwillupdate_js,
-	demosampleapp_rules_resetappsettingsandlogout_js : demosampleapp_rules_resetappsettingsandlogout_js,
-	demosampleapp_services_sampleservicev2_service : demosampleapp_services_sampleservicev2_service,
-	demosampleapp_styles_styles_css : demosampleapp_styles_styles_css,
-	demosampleapp_styles_styles_json : demosampleapp_styles_styles_json,
-	demosampleapp_styles_styles_less : demosampleapp_styles_styles_less,
-	demosampleapp_styles_styles_nss : demosampleapp_styles_styles_nss,
+	mdk_workorderoutage_actions_appupdate_action : mdk_workorderoutage_actions_appupdate_action,
+	mdk_workorderoutage_actions_appupdatefailuremessage_action : mdk_workorderoutage_actions_appupdatefailuremessage_action,
+	mdk_workorderoutage_actions_appupdateprogressbanner_action : mdk_workorderoutage_actions_appupdateprogressbanner_action,
+	mdk_workorderoutage_actions_appupdatesuccessmessage_action : mdk_workorderoutage_actions_appupdatesuccessmessage_action,
+	mdk_workorderoutage_actions_closemodalpage_cancel_action : mdk_workorderoutage_actions_closemodalpage_cancel_action,
+	mdk_workorderoutage_actions_closemodalpage_complete_action : mdk_workorderoutage_actions_closemodalpage_complete_action,
+	mdk_workorderoutage_actions_closepage_action : mdk_workorderoutage_actions_closepage_action,
+	mdk_workorderoutage_actions_customers_navtocustomers_detail_action : mdk_workorderoutage_actions_customers_navtocustomers_detail_action,
+	mdk_workorderoutage_actions_customers_navtocustomers_list_action : mdk_workorderoutage_actions_customers_navtocustomers_list_action,
+	mdk_workorderoutage_actions_errorarchive_errorarchive_syncfailure_action : mdk_workorderoutage_actions_errorarchive_errorarchive_syncfailure_action,
+	mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_detail_action : mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_detail_action,
+	mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_list_action : mdk_workorderoutage_actions_errorarchive_navtoerrorarchive_list_action,
+	mdk_workorderoutage_actions_logout_action : mdk_workorderoutage_actions_logout_action,
+	mdk_workorderoutage_actions_logoutmessage_action : mdk_workorderoutage_actions_logoutmessage_action,
+	mdk_workorderoutage_actions_navtowork_request_details_action : mdk_workorderoutage_actions_navtowork_request_details_action,
+	mdk_workorderoutage_actions_onwillupdate_action : mdk_workorderoutage_actions_onwillupdate_action,
+	mdk_workorderoutage_actions_products_navtoproducts_detail_action : mdk_workorderoutage_actions_products_navtoproducts_detail_action,
+	mdk_workorderoutage_actions_products_navtoproducts_list_action : mdk_workorderoutage_actions_products_navtoproducts_list_action,
+	mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_detail_action : mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_detail_action,
+	mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_list_action : mdk_workorderoutage_actions_purchaseorderheaders_navtopurchaseorderheaders_list_action,
+	mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_detail_action : mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_detail_action,
+	mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_list_action : mdk_workorderoutage_actions_purchaseorderitems_navtopurchaseorderitems_list_action,
+	mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_detail_action : mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_detail_action,
+	mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_list_action : mdk_workorderoutage_actions_salesorderheaders_navtosalesorderheaders_list_action,
+	mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_detail_action : mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_detail_action,
+	mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_list_action : mdk_workorderoutage_actions_salesorderitems_navtosalesorderitems_list_action,
+	mdk_workorderoutage_actions_service_closeoffline_action : mdk_workorderoutage_actions_service_closeoffline_action,
+	mdk_workorderoutage_actions_service_closeofflinefailuremessage_action : mdk_workorderoutage_actions_service_closeofflinefailuremessage_action,
+	mdk_workorderoutage_actions_service_closeofflinesuccessmessage_action : mdk_workorderoutage_actions_service_closeofflinesuccessmessage_action,
+	mdk_workorderoutage_actions_service_downloadoffline_action : mdk_workorderoutage_actions_service_downloadoffline_action,
+	mdk_workorderoutage_actions_service_downloadstartedmessage_action : mdk_workorderoutage_actions_service_downloadstartedmessage_action,
+	mdk_workorderoutage_actions_service_initializeoffline_action : mdk_workorderoutage_actions_service_initializeoffline_action,
+	mdk_workorderoutage_actions_service_initializeofflinefailuremessage_action : mdk_workorderoutage_actions_service_initializeofflinefailuremessage_action,
+	mdk_workorderoutage_actions_service_initializeofflinesuccessmessage_action : mdk_workorderoutage_actions_service_initializeofflinesuccessmessage_action,
+	mdk_workorderoutage_actions_service_syncfailuremessage_action : mdk_workorderoutage_actions_service_syncfailuremessage_action,
+	mdk_workorderoutage_actions_service_syncstartedmessage_action : mdk_workorderoutage_actions_service_syncstartedmessage_action,
+	mdk_workorderoutage_actions_service_syncsuccessmessage_action : mdk_workorderoutage_actions_service_syncsuccessmessage_action,
+	mdk_workorderoutage_actions_service_uploadoffline_action : mdk_workorderoutage_actions_service_uploadoffline_action,
+	mdk_workorderoutage_globals_appdefinition_version_global : mdk_workorderoutage_globals_appdefinition_version_global,
+	mdk_workorderoutage_i18n_i18n_properties : mdk_workorderoutage_i18n_i18n_properties,
+	mdk_workorderoutage_jsconfig_json : mdk_workorderoutage_jsconfig_json,
+	mdk_workorderoutage_pages_customers_customers_detail_page : mdk_workorderoutage_pages_customers_customers_detail_page,
+	mdk_workorderoutage_pages_customers_customers_list_page : mdk_workorderoutage_pages_customers_customers_list_page,
+	mdk_workorderoutage_pages_errorarchive_errorarchive_detail_page : mdk_workorderoutage_pages_errorarchive_errorarchive_detail_page,
+	mdk_workorderoutage_pages_errorarchive_errorarchive_list_page : mdk_workorderoutage_pages_errorarchive_errorarchive_list_page,
+	mdk_workorderoutage_pages_main_page : mdk_workorderoutage_pages_main_page,
+	mdk_workorderoutage_pages_products_products_detail_page : mdk_workorderoutage_pages_products_products_detail_page,
+	mdk_workorderoutage_pages_products_products_list_page : mdk_workorderoutage_pages_products_products_list_page,
+	mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_detail_page : mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_detail_page,
+	mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_list_page : mdk_workorderoutage_pages_purchaseorderheaders_purchaseorderheaders_list_page,
+	mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_detail_page : mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_detail_page,
+	mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_list_page : mdk_workorderoutage_pages_purchaseorderitems_purchaseorderitems_list_page,
+	mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_detail_page : mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_detail_page,
+	mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_list_page : mdk_workorderoutage_pages_salesorderheaders_salesorderheaders_list_page,
+	mdk_workorderoutage_pages_salesorderitems_salesorderitems_detail_page : mdk_workorderoutage_pages_salesorderitems_salesorderitems_detail_page,
+	mdk_workorderoutage_pages_salesorderitems_salesorderitems_list_page : mdk_workorderoutage_pages_salesorderitems_salesorderitems_list_page,
+	mdk_workorderoutage_pages_work_confirmation_page : mdk_workorderoutage_pages_work_confirmation_page,
+	mdk_workorderoutage_pages_work_request_details_page : mdk_workorderoutage_pages_work_request_details_page,
+	mdk_workorderoutage_rules_appupdatefailure_js : mdk_workorderoutage_rules_appupdatefailure_js,
+	mdk_workorderoutage_rules_appupdatesuccess_js : mdk_workorderoutage_rules_appupdatesuccess_js,
+	mdk_workorderoutage_rules_errorarchive_errorarchive_checkforsyncerror_js : mdk_workorderoutage_rules_errorarchive_errorarchive_checkforsyncerror_js,
+	mdk_workorderoutage_rules_onwillupdate_js : mdk_workorderoutage_rules_onwillupdate_js,
+	mdk_workorderoutage_rules_openworkcofirmation_js : mdk_workorderoutage_rules_openworkcofirmation_js,
+	mdk_workorderoutage_rules_resetappsettingsandlogout_js : mdk_workorderoutage_rules_resetappsettingsandlogout_js,
+	mdk_workorderoutage_services_sampleservicev2_service : mdk_workorderoutage_services_sampleservicev2_service,
+	mdk_workorderoutage_styles_styles_css : mdk_workorderoutage_styles_styles_css,
+	mdk_workorderoutage_styles_styles_json : mdk_workorderoutage_styles_styles_json,
+	mdk_workorderoutage_styles_styles_less : mdk_workorderoutage_styles_styles_less,
+	mdk_workorderoutage_styles_styles_nss : mdk_workorderoutage_styles_styles_nss,
 	tsconfig_json : tsconfig_json,
 	version_mdkbundlerversion : version_mdkbundlerversion
 }
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/Styles/Styles.json":
-/*!************************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/Styles/Styles.json ***!
-  \************************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/Styles/Styles.json":
+/*!******************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/Styles/Styles.json ***!
+  \******************************************************************/
 /***/ ((module) => {
 
 "use strict";
@@ -1263,10 +1173,10 @@ module.exports = {};
 
 /***/ }),
 
-/***/ "./build.definitions/DemoSampleApp/jsconfig.json":
-/*!*******************************************************!*\
-  !*** ./build.definitions/DemoSampleApp/jsconfig.json ***!
-  \*******************************************************/
+/***/ "./build.definitions/MDK_WorkOrderOutage/jsconfig.json":
+/*!*************************************************************!*\
+  !*** ./build.definitions/MDK_WorkOrderOutage/jsconfig.json ***!
+  \*************************************************************/
 /***/ ((module) => {
 
 "use strict";

@@ -1,0 +1,470 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "TAG! - TEST! - GROUND!",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Styles": {
+								"Background": "objectTitleBG",
+								"Value": "objectTitleVal"
+							},
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Work Request Number",
+							"Enabled": true
+						},
+						{
+							"Value": "Transformer Outage",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Work Request Type",
+							"Enabled": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Secondary Assignment",
+							"Enabled": true
+						},
+						{
+							"Value": [
+								"Issued"
+							],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FCWRStatus",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "WR Status",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"Issued",
+								"Completed"
+							]
+						},
+						{
+							"Value": [
+								"UG"
+							],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Construction Type",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"OH",
+								"UG"
+							]
+						},
+						{
+							"Value": "XXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Meter Number",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Device",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Grid",
+							"Enabled": true
+						},
+						{
+							"Value": [
+								"C"
+							],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": true,
+							"AllowEmptySelection": true,
+							"Caption": "Phase(s)",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"A",
+								"B",
+								"C"
+							]
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Confirmed Open",
+							"Enabled": true
+						},
+						{
+							"Value": "14",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Priorty Score",
+							"Enabled": true
+						},
+						{
+							"Value": "14",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Customers Out",
+							"Enabled": true
+						},
+						{
+							"Value": "14",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Customers Assigned",
+							"Enabled": true
+						},
+						{
+							"Value": "0",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Special Condition",
+							"Enabled": true
+						},
+						{
+							"Value": "0",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Military",
+							"Enabled": true
+						},
+						{
+							"Value": "0",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Life Support",
+							"Enabled": true
+						},
+						{
+							"Value": "0",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Medical Certificates",
+							"Enabled": true
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "XXXXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Customer",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Business",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Address",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Phone No.",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Alt Phone No.",
+							"Enabled": true
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell1"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "ETR Range",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "To",
+							"Mode": "Datetime"
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "ETR Updated By",
+							"Enabled": true
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "At",
+							"Mode": "Datetime"
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell2"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": true
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader0",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Work Description"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell3"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": true
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader1",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "ROC Information"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell4"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": true
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader2",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Field Information"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell5"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Work_Request_Details",
+	"Caption": "Work Request Details",
+	"PrefersLargeCaption": true
+}

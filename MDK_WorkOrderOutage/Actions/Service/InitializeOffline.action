@@ -1,0 +1,36 @@
+{
+    "Service": "/MDK_WorkOrderOutage/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+            "Name": "Customers",
+            "Query": "Customers"
+        },
+        {
+            "Name": "PurchaseOrderHeaders",
+            "Query": "PurchaseOrderHeaders"
+        },
+        {
+            "Name": "PurchaseOrderItems",
+            "Query": "PurchaseOrderItems"
+        },
+        {
+            "Name": "SalesOrderHeaders",
+            "Query": "SalesOrderHeaders"
+        },
+        {
+            "Name": "SalesOrderItems",
+            "Query": "SalesOrderItems"
+        },
+        {
+            "Name": "Products",
+            "Query": "Products"
+        }
+    ],
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText": "Downloading...",
+    "ActionResult": {
+        "_Name": "init"
+    },
+    "OnSuccess": "/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineSuccessMessage.action",
+    "OnFailure": "/MDK_WorkOrderOutage/Actions/Service/InitializeOfflineFailureMessage.action"
+}

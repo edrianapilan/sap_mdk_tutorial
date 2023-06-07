@@ -1,15 +1,15 @@
 _schema-version: "3.2"
-ID: nsDemoSampleApp
+ID: nsMDK_WorkOrderOutage
 version: 0.0.1
 modules:
-- name: nsDemoSampleApp-approuter
+- name: nsMDK_WorkOrderOutage-approuter
   type: approuter.nodejs
-  path: nsDemoSampleApp-approuter
+  path: nsMDK_WorkOrderOutage-approuter
   requires:
-  - name: nsDemoSampleApp_html_repo_runtime
-  - name: dest_nsDemoSampleApp
-  - name: conn_nsDemoSampleApp
-  - name: uaa_nsDemoSampleApp
+  - name: nsMDK_WorkOrderOutage_html_repo_runtime
+  - name: dest_nsMDK_WorkOrderOutage
+  - name: conn_nsMDK_WorkOrderOutage
+  - name: uaa_nsMDK_WorkOrderOutage
   parameters:
     disk-quota: 256M
     memory: 256M
@@ -17,11 +17,11 @@ modules:
     SEND_XFRAMEOPTIONS: false
     SAP_ROUTER_VERSION: 10
     destinations: '[]'
-- name: nsDemoSampleApp_ui_deployer
+- name: nsMDK_WorkOrderOutage_ui_deployer
   type: com.sap.application.content
   path: .
   requires:
-  - name: nsDemoSampleApp_html_repo_host
+  - name: nsMDK_WorkOrderOutage_html_repo_host
     parameters:
       content-target: true
   build-parameters:
@@ -40,32 +40,32 @@ modules:
     - npm run build
     supported-platforms: []
 resources:
-- name: nsDemoSampleApp_html_repo_runtime
+- name: nsMDK_WorkOrderOutage_html_repo_runtime
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
     service-plan: app-runtime
-- name: nsDemoSampleApp_html_repo_host
+- name: nsMDK_WorkOrderOutage_html_repo_host
   type: org.cloudfoundry.managed-service
   parameters:
     service: html5-apps-repo
     service-plan: app-host
-- name: dest_nsDemoSampleApp
+- name: dest_nsMDK_WorkOrderOutage
   type: org.cloudfoundry.managed-service
   parameters:    
     service: destination
     service-plan: lite
-- name: conn_nsDemoSampleApp
+- name: conn_nsMDK_WorkOrderOutage
   type: org.cloudfoundry.managed-service
   parameters:    
     service: connectivity
     service-plan: lite
-- name: uaa_nsDemoSampleApp
+- name: uaa_nsMDK_WorkOrderOutage
   type: org.cloudfoundry.managed-service
   parameters:
     path: ./xs-security.json
     service: xsuaa
-    service-name: nsDemoSampleApp-xsuaa-service
+    service-name: nsMDK_WorkOrderOutage-xsuaa-service
     service-plan: application
 
 build-parameters:

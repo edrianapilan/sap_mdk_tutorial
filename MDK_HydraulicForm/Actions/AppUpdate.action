@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/MDK_HydraulicForm/Rules/AppUpdateFailure.js",
+    "OnSuccess": "/MDK_HydraulicForm/Rules/AppUpdateSuccess.js"
+}

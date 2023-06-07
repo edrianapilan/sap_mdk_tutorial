@@ -1,0 +1,1598 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker2",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Date",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": "XXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty1",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Windows ID",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						},
+						{
+							"Value": "XXXXXXXXXXXX",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty2",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Machine ID",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader15",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Vehicle Inspection"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell2"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": true,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Daily Check Sheet - Aerial Lift",
+							"OnValueChange": "/MDK_HydraulicForm/Rules/ShowAerialLiftForm.js"
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Daily Check Sheet - Derrick Digger",
+							"OnValueChange": "/MDK_HydraulicForm/Rules/ShowDerrickDiggerForm.js"
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader13",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Inspection Type"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCInspectionType"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "Please enter corresponding if not satisfactory",
+							"_Name": "KeyValue0",
+							"KeyName": "Status Codes",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 1
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger Controls / Stabilizer (Truck w/o Outrigger)"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "2. Lower Control System and Tool Circuit"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "3. Test Override - Lower"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "4. Upper Control System and Tool Circuit"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "5. Test Hydraulic Dump Valve-Basket"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker7",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "6. Test Emergency Power (Electric Drive)"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker8",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader1",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Controls"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCAerialLiftControls"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch6",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "7. Fiberglass Boom / Insert"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "8. Bucket /mounting"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker9",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "9. Drive cables/linkage"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker10",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "10. Leveling cables/rods & chains"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker11",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "11. Test pilot operated check valves"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker12",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader4",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Booms"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCAerialLiftBooms"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "12. Visual check of welds"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker13",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "13. Visual check of all pins"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker14",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "14. Visual check of all cylinders"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker15",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "15. Visual check of rotation drive"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker16",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader5",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Structural"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCAerialLiftStructural"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "16. Lifting jib/pole"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker17",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "17. Material handling"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker18",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch22",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "18. Scuff pads"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker19",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch23",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "19. Boom/brake"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker20",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch24",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "20. Test micro brake"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker21",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch27",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "21. Check hydraulic fluid"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker22",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch26",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "22. Lubricate machine per chart"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker23",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch25",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "23. Fiberglass booms & basket cleaned"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker24",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch21",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "24. Out of service"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker25",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader6",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Other"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCAerialLiftOther"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch4",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "1. Outrigger Controls and Toll Circuit"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker2",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch5",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "2. Outriggers"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker3",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch28",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "3. Control Valves"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker26",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader2",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Controls"
+					},
+					"Visible": false,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCDerrickDiggerControls"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch52",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "4. Main Booms"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker50",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch53",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "5. Intermidiate"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker51",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch54",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "6. Extension Booms"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker52",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader10",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Booms"
+					},
+					"Visible": false,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCDerrickDiggerBooms"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch55",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "7. Pole Jack"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker53",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch56",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "8. Hydraulic Fluid Level"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker54",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch57",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "9. Pin on bucket"
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker55",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Status Code",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader11",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Other"
+					},
+					"Visible": false,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SFCDerrickDiggerOther"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": true
+						}
+					],
+					"Header": {
+						"_Name": "SectionHeader14",
+						"AccessoryType": "none",
+						"UseTopPadding": true,
+						"Caption": "Operator/Inspector Comments"
+					},
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Date Fire Extinguisher Check",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": "Enter Date",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FormCellDatePicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Date Last DI-Electric Test",
+							"Mode": "Datetime"
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch58",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Tire Pressure Check"
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FormCellSimpleProperty0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Vehicle Number",
+							"Enabled": true
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker56",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Office Location",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						},
+						{
+							"Value": [],
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker57",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Work Shift Hours",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"One",
+								"Two",
+								"Three"
+							]
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell1"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true
+					},
+					"KeyAndValues": [],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue1",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Hydraulic_Inspection_Form",
+	"Caption": "Hydraulic Inspection Form",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/MDK_HydraulicForm/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

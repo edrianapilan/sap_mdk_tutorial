@@ -1,0 +1,9 @@
+{
+    "Service": "/MDK_WorkOrderOutage/Services/SampleServiceV2.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/MDK_WorkOrderOutage/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/MDK_WorkOrderOutage/Actions/Service/SyncFailureMessage.action"
+}

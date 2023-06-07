@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "path": "MDK_WorkOrderOutage"
+        }
+    ],
+    "settings": {
+        "mdk.uieditor": {
+            "device": "tablet"
+        }
+    }
+}

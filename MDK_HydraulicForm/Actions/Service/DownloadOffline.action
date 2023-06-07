@@ -1,0 +1,13 @@
+{
+    "Service": "/MDK_HydraulicForm/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+        "Name": "Customers",
+        "Query": "Customers"
+    }],
+    "_Type": "Action.Type.OfflineOData.Download",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnFailure": "/MDK_HydraulicForm/Actions/Service/SyncFailureMessage.action",
+    "OnSuccess": "/MDK_HydraulicForm/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"
+}

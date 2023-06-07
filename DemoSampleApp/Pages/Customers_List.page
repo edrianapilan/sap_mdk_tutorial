@@ -35,7 +35,7 @@
 						"DetailImage": "",
 						"Headline": "{LastName}",
 						"Subheadline": "{FirstName}",
-						"Description": "{City}",
+						"Description": "{City} City",
 						"OnPress": "/DemoSampleApp/Actions/NavToCustomers_Detail.action",
 						"ActivityItems": [
 							{
