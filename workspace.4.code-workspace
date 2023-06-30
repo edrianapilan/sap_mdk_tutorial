@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "path": "MDK_AssetInspection"
+        }
+    ],
+    "settings": {
+        "mdk.uieditor": {
+            "device": "tablet"
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "Service": "/MDK_PoleInspection/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+        "Name": "Customers",
+        "Query": "Customers"
+    }],
+    "_Type": "Action.Type.OfflineOData.Download",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnFailure": "/MDK_PoleInspection/Actions/Service/SyncFailureMessage.action",
+    "OnSuccess": "/MDK_PoleInspection/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"
+}

@@ -1,0 +1,9 @@
+{
+    "Service": "/MDK_AssetInspection/Services/SampleServiceV2.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/MDK_AssetInspection/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/MDK_AssetInspection/Actions/Service/SyncFailureMessage.action"
+}

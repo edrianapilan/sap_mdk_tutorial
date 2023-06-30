@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToMeter_Information"
+	},
+	"PageToOpen": "/MDK_MeterInformation/Pages/Meter_Information.page"
+}

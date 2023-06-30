@@ -1,0 +1,12 @@
+{
+    "folders": [
+        {
+            "path": "MDK_MeterInformation"
+        }
+    ],
+    "settings": {
+        "mdk.uieditor": {
+            "device": "tablet"
+        }
+    }
+}

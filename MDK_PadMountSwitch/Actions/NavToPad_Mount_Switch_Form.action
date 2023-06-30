@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToPad_Mount_Switch_Form"
+	},
+	"PageToOpen": "/MDK_PadMountSwitch/Pages/Pad_Mount_Switch_Form.page"
+}

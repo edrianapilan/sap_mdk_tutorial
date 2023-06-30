@@ -1,0 +1,9 @@
+{
+    "Service": "/MDK_MeterInformation/Services/SampleServiceV2.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/MDK_MeterInformation/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/MDK_MeterInformation/Actions/Service/SyncFailureMessage.action"
+}

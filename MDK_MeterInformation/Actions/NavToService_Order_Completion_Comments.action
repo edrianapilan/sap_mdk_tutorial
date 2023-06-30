@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToService_Order_Completion_Comments"
+	},
+	"PageToOpen": "/MDK_MeterInformation/Pages/Service_Order_Completion_Comments.page"
+}

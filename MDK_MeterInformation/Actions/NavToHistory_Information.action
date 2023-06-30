@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToHistory_Information"
+	},
+	"PageToOpen": "/MDK_MeterInformation/Pages/History_Information.page"
+}

@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToInspection_Order"
+	},
+	"PageToOpen": "/MDK_PoleInspection/Pages/Inspection_order.page"
+}

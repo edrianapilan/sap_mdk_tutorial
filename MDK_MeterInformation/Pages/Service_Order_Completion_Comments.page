@@ -1,0 +1,162 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Comments",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"CHANGE SERVICE TYPE OH/UG",
+								"CUT @ POLE",
+								"CUT @ TRANSFORMER",
+								"CUT IN FLAT",
+								"FUSES INVERTED",
+								"INSTALL LOCKING BAND",
+								"LEFT DOOR TAG",
+								"RECONNECTED @ POLE",
+								"ROCENNECTED @ TRANSFORMER",
+								"RECONNECTED SERVICE",
+								"REMOVED JUMPERS",
+								"REMOVED STOLEN METER",
+								"SEASONAL",
+								"SERVICE FOUND OFF",
+								"SERVICE FOUND OFF/GOT RDG",
+								"SERVICE FOUND ON",
+								"SERVICE FOUND ON/GOT RDG",
+								"VACANT",
+								"VERIFIED READING"
+							]
+						},
+						{
+							"Value": "Free Form",
+							"_Type": "Control.Type.FormCell.Title",
+							"_Name": "FormCellTitle0",
+							"IsEditable": false,
+							"IsVisible": true,
+							"Separator": true,
+							"PlaceHolder": "Free Form",
+							"Enabled": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.Note",
+							"_Name": "FormCellNote0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Enabled": true
+						},
+						{
+							"Value": false,
+							"_Type": "Control.Type.FormCell.Switch",
+							"_Name": "FormCellSwitch0",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Office Review?"
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FormCellListPicker1",
+							"IsEditable": true,
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Action Taken",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"IsSearchCancelledAfterSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"PickerItems": [
+								"Cut off at pole",
+								"Cut off at pad",
+								"Dials Changed",
+								"Field Work Completed",
+								"Installed Meter",
+								"Installed Lock Band",
+								"Not Worked",
+								"Other",
+								"Reconnected at Pole",
+								"Removed Meter",
+								"Refer to Security",
+								"Service Found Off",
+								"Service On / Got Reading"
+							]
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
+					"_Type": "Section.Type.ButtonTable",
+					"_Name": "SectionButtonTable0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Buttons": [
+						{
+							"_Name": "SectionButton0",
+							"Title": "New Action / Service Order Completion",
+							"Alignment": "Center",
+							"ButtonType": "Text",
+							"Semantic": "Normal",
+							"ImagePosition": "Leading",
+							"FullWidth": true,
+							"Visible": true,
+							"OnPress": "/MDK_MeterInformation/Rules/NavToServiceOrderCompletion.js"
+						}
+					]
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Service_Order_Completion_Comments",
+	"Caption": "Service Order Completion Comments",
+	"PrefersLargeCaption": true
+}

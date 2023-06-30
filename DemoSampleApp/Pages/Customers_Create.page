@@ -11,7 +11,6 @@
 							"_Name": "FCCreateFirstName",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "First Name",
 							"PlaceHolder": "Enter Value",
 							"Enabled": true
@@ -21,7 +20,6 @@
 							"_Name": "FCCreateLastName",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "Last Name",
 							"PlaceHolder": "Enter Value",
 							"Enabled": true
@@ -31,7 +29,6 @@
 							"_Name": "FCCreatePhone",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "Phone",
 							"PlaceHolder": "Enter Value",
 							"KeyboardType": "Phone",
@@ -42,7 +39,6 @@
 							"_Name": "FCCreateEmail",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "Email",
 							"PlaceHolder": "Enter Value",
 							"KeyboardType": "Email",
@@ -54,7 +50,6 @@
 							"_Name": "FCCreateDOB",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "DOB",
 							"Mode": "Datetime"
 						},
@@ -64,7 +59,6 @@
 							"_Name": "FormCellSwitch0",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"Caption": "Caption"
 						},
 						{
@@ -75,7 +69,6 @@
 							"_Name": "FormCellListPicker0",
 							"IsEditable": true,
 							"IsVisible": true,
-							"Separator": true,
 							"AllowMultipleSelection": false,
 							"AllowEmptySelection": true,
 							"Caption": "Choose Single",

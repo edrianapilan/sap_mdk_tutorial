@@ -1,0 +1,7 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "NavToAsset_Inspection"
+	},
+	"PageToOpen": "/MDK_AssetInspection/Pages/Asset_Inspection_Form.page"
+}

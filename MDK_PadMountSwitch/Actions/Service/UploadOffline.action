@@ -1,0 +1,9 @@
+{
+    "Service": "/MDK_PadMountSwitch/Services/SampleServiceV2.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/MDK_PadMountSwitch/Actions/Service/DownloadStartedMessage.action",
+    "OnFailure": "/MDK_PadMountSwitch/Actions/Service/SyncFailureMessage.action"
+}

@@ -1,0 +1,13 @@
+{
+    "Service": "/MDK_AssetInspection/Services/SampleServiceV2.service",
+    "DefiningRequests": [{
+        "Name": "Customers",
+        "Query": "Customers"
+    }],
+    "_Type": "Action.Type.OfflineOData.Download",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnFailure": "/MDK_AssetInspection/Actions/Service/SyncFailureMessage.action",
+    "OnSuccess": "/MDK_AssetInspection/Rules/ErrorArchive/ErrorArchive_CheckForSyncError.js"
+}

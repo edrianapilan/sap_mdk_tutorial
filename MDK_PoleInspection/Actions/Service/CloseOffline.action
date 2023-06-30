@@ -1,0 +1,10 @@
+{
+    "_Type": "Action.Type.OfflineOData.Close",
+    "Service": "/MDK_PoleInspection/Services/SampleServiceV2.service",
+    "Force": true,
+    "ActionResult": {
+        "_Name": "close"
+    },
+    "OnSuccess": "/MDK_PoleInspection/Actions/Service/CloseOfflineSuccessMessage.action",
+    "OnFailure": "/MDK_PoleInspection/Actions/Service/CloseOfflineFailureMessage.action"
+}

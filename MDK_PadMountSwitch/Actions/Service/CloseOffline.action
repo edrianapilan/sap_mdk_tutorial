@@ -1,0 +1,10 @@
+{
+    "_Type": "Action.Type.OfflineOData.Close",
+    "Service": "/MDK_PadMountSwitch/Services/SampleServiceV2.service",
+    "Force": true,
+    "ActionResult": {
+        "_Name": "close"
+    },
+    "OnSuccess": "/MDK_PadMountSwitch/Actions/Service/CloseOfflineSuccessMessage.action",
+    "OnFailure": "/MDK_PadMountSwitch/Actions/Service/CloseOfflineFailureMessage.action"
+}

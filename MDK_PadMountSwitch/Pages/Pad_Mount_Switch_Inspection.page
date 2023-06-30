@@ -1,0 +1,21 @@
+{
+	"Controls": [
+		{
+			"_Type": "Control.Type.Tabs",
+			"_Name": "Tabs0",
+			"Items": [
+				{
+					"_Type": "Control.Type.TabItem",
+					"Caption": "TabItem0",
+					"PageToOpen": "/MDK_PadMountSwitch/Pages/Pad_Mount_Switch_Form.page",
+					"_Name": "TabItem0"
+				}
+			],
+			"Position": "Top",
+			"TabStripType": "Normal"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "Pad_Mount_Switch_Inspection",
+	"Caption": "Pad Mount Switch Inspection"
+}

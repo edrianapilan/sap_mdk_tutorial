@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/MDK_PadMountSwitch/Rules/AppUpdateFailure.js",
+    "OnSuccess": "/MDK_PadMountSwitch/Rules/AppUpdateSuccess.js"
+}

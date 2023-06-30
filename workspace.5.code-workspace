@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "path": "MDK_PoleInspection"
+        },
+        {
+            "name": "MDK_PadMountSwitch",
+            "path": "MDK_PadMountSwitch"
+        }
+    ],
+    "settings": {
+        "mdk.uieditor": {
+            "device": "tablet"
+        }
+    }
+}
